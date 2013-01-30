@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+	id="skin.rise"
+	version="0.0.2"
+	name="Rise"
+	provider-name="Liquidolze">
+	<requires>
+		<import addon="xbmc.gui" version="4.00"></import>
+	</requires>
+	<extension
+    point="xbmc.gui.skin"
+    defaultthemename="textures.xbt"
+    debugging="false"
+    effectslowdown="0.75">
+		<res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+		<!--res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" /-->
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>Created by Liquidolze</summary>
+		<description>'Foundation' is a basic, fully functional XBMC skin designed to be used as a base for creating a new skin; or simply as a learning tool for the beginner.</description>
+	</extension>
+</addon>
