@@ -1,0 +1,141 @@
+<!--RISE-->
+<window id="20">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>Black-Background.png</texture>
+		</control>	
+		
+	
+		<!--Fanart-->	
+		<control type="image">			
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width> 
+			<height>720</height>					
+			<texture background="true">hover_addons.png</texture>		
+			<aspectratio align="center">scale</aspectratio>
+			<fadetime>1500</fadetime>		
+		</control>
+		
+		<!--View-->
+		<include>View_50_List</include>
+
+		<!--Dim Sub Menu-->		
+		<!--control type="image">				
+			<animation time="600" effect="fade" start="100" end="0" condition="!ControlGroup(9000).HasFocus()">Conditional</animation>					
+			<animation time="600" effect="fade" tween="cubic" easing="out" start="100" end="0">WindowClose</animation>				
+			<texture background="true">white_back.png</texture>			
+		</control-->		
+		
+		<!--Start Sub Menu-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>
+			<control type="image">				<!--Sub Menu Panel-->
+				<posx>-20</posx>
+				<posy>60</posy><!--96-->
+				<width>600</width>
+				<height>790</height><!--651-->
+				<texture>Black-Background.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />				
+				</animation>
+			</control>		
+			<control type="image">				<!--Sub Menu Tab-->				
+				<posx>600</posx>
+				<posy>330</posy>
+				<width>64</width>
+				<height>199</height>
+				<!--texture>button-focus2.png</texture-->
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>				
+			</control>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->	
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>	
+				<posx>48</posx>
+				<posy>140</posy>
+				<width>469</width>
+				<height>620</height>
+				<itemgap>-</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>					
+				<orientation>vertical</orientation>	
+			
+				<!--Buttons-->
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>Small</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="201">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>separator.png</texture>				
+				</control>				
+				<control type="button" id="3">			<!--Sort-->					
+					<width>469</width>
+					<align>left</align>					
+				</control>
+				<control type="togglebutton" id="4">	<!--Ascending-->					
+					<width>469</width>
+					<label>584</label>
+					<align>left</align>
+					<altlabel>585</altlabel>					
+				</control>
+				<control type="radiobutton" id="5">		<!--Update-->					
+					<label>24063</label>
+					<align>left</align>
+					<width>469</width>					
+				</control>
+				<control type="radiobutton" id="6">		<!--No notifications-->				
+					<label>25000</label>
+					<align>left</align>
+					<width>469</width>					
+				</control>
+				<control type="image" id="203">			<!--Space-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_space.png</texture>				
+				</control>		
+				<control type="label" id="300">			<!--View:-->						
+					<width>469</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>Small</font>
+					<label>[B]$LOCALIZE[457][/B]</label>
+					<textcolor>White</textcolor>						
+				</control>	
+				<control type="image" id="301">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>separator.png</texture>				
+				</control>		
+				<control type="button" id="302">		<!--View List-->					
+					<align>left</align>		
+					<label>List</label>					
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>	
+
+			</control>
+		</control>
+	</controls>
+
+</window>

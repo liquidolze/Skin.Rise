@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="142">
+	<defaultcontrol always="true">603</defaultcontrol>
+	<controls>
+
+		<control type="group">
+		
+			<control type="image">
+				<posx>20</posx>
+				<posy>540</posy>
+				<width>1240</width>
+				<height>160</height>
+				<texture background="true" diffuse="postermatte5.png">colors/color_grey1.png</texture>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
+			</control>			
+
+			<!--control type="image">
+				<description>Non Movie cover image</description>
+				<posx>30</posx>
+				<posy>30</posy>
+				<width>340</width>
+				<height>260</height>
+				<fadetime>200</fadetime>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>!VideoPlayer.Content(Movies)</visible>
+			</control-->
+
+			<control type="image">
+				<description>Movie cover image</description>
+				<posx>30</posx>
+				<posy>30</posy>
+				<width>340</width>
+				<height>320</height>
+				<fadetime>200</fadetime>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio  align="left" aligny="top">keep</aspectratio>
+				<bordertexture border="5">other_textures/ButtonFo.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>
+
+			<control type="label">
+				<description>Chapter Count</description>
+				<posx>30</posx>
+				<posy>576</posy>
+				<width>300</width>
+				<label>$INFO[Player.Chapter,[COLOR=blue]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount, / ]</label>
+				<align>left</align>
+				<font>Medium</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>Player.ChapterCount</visible>
+				<animation effect="slide" end="0,34" condition="!VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos)">Conditional</animation>
+			</control>
+
+			<control type="label">
+				<posx>30</posx>
+				<posy>610</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.TVShowTitle] - ($INFO[VideoPlayer.Season]$INFO[VideoPlayer.Episode,x])</label>
+				<align>left</align>
+				<font>Medium</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(Episodes)</visible>
+			</control>
+
+			<control type="label">
+				<posx>30</posx>
+				<posy>610</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]</label>
+				<align>left</align>
+				<font>Medium</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(MusicVideos)</visible>
+			</control>
+
+			<control type="label">
+				<posx>30</posx>
+				<posy>644</posy>
+				<width>880</width>
+				<label>$INFO[VideoPlayer.Title]</label>
+				<scroll>true</scroll>
+				<align>left</align>
+				<font>Medium</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
+			</control>
+
+			<control type="label">
+				<description>Player Times</description>
+				<posx>1250</posx>
+				<posy>610</posy>
+				<width>500</width>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+				<align>right</align>
+				<font>Small</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
+			</control>
+
+			<control type="label">
+				<description>Current Video End Time</description>
+				<posx>1250</posx>
+				<posy>644</posy>
+				<width>890</width>
+				<label>[COLOR=blue]$LOCALIZE[31000][/COLOR] : $INFO[Player.FinishTime]</label>
+				<align>right</align>
+				<font>Small</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
+			<control type="progress">
+				<description>Progressbar</description>
+				<posx>30</posx>
+				<posy>680</posy>
+				<width>1220</width>
+				<height>14</height>
+				<info>Player.Progress</info>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
+			</control>
+		</control>	
+		<!-- -------------------------------------------------------------------------------- -->
+		<!--                              LIVE-TV-Ansicht                                     -->
+		<!-- -------------------------------------------------------------------------------- -->
+
+		<control type="group">
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>540</posy>
+				<width>1280</width>
+				<height>160</height>
+				<texture background="true" diffuse="postermatte4.png">colors/tv-osd.png</texture>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+
+			<control type="image">
+				<description>LiveTV Channel Logo</description>
+				<posx>20</posx>
+				<posy>540</posy>
+				<width>260</width>
+				<height>160</height>
+				<fadetime>200</fadetime>
+				<animation effect="fade" time="900">VisibleChange</animation>
+				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<bordertexture border="6">ContentPanelVertical.png</bordertexture>
+				<bordersize>6</bordersize>
+				<aspectratio aligny="center">keep</aspectratio>
+				<visible>!VideoPlayer.Content(Movies)</visible>
+			</control>
+			
+			<control type="label">
+				<description>time label</description>
+				<posx>1000</posx>
+				<posy>547</posy>
+				<width>280</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<textcolor>White</textcolor>
+				<label>$INFO[System.Time] $INFO[System.Date]</label>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
+			<control type="label">
+				<posx>350</posx>
+				<posy>545</posy>
+				<width>780</width>
+				<height>30</height>
+				<label>$INFO[VideoPlayer.ChannelName]</label>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Medium</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
+			<control type="label">
+				<posx>350</posx>
+				<posy>580</posy>
+				<width>600</width>
+				<height>30</height>
+				<!--label>$INFO[VideoPlayer.Title]</label-->
+				<label>$INFO[VideoPlayer.StartTime] - $INFO[VideoPlayer.EndTime] $INFO[VideoPlayer.Title]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
+			<!--control type="label">
+				<posx>350</posx>
+				<posy>580</posy>
+				<width>80</width>
+				<height>30</height>
+				<label>$INFO[VideoPlayer.StartTime]</label>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control-->
+			
+			<!--control type="label">
+				<description>Player Times</description>
+				<posx>1250</posx>
+				<posy>560</posy>
+				<width>500</width>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+				<align>right</align>
+				<font>Small</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control-->
+
+			<!--control type="label">
+				<description>Current Video End Time</description>
+				<posx>1000</posx>
+				<posy>580</posy>
+				<width>250</width>
+				<height>30</height>
+				<label>[COLOR=blue]$LOCALIZE[31000][/COLOR] : $INFO[Player.FinishTime]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control-->
+			<control type="label">
+				<posx>350</posx>
+				<posy>632</posy>
+				<width>780</width>
+				<height>30</height>
+				<!--label>$INFO[VideoPlayer.NextTitle]</label-->
+				<label>$INFO[VideoPlayer.NextStartTime] - $INFO[VideoPlayer.NextEndTime] $INFO[VideoPlayer.NextTitle]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<textcolor>white</textcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			
+			<!--control type="label">
+				<posx>350</posx>
+				<posy>632</posy>
+				<width>80</width>
+				<height>30</height>
+				<label>$INFO[VideoPlayer.NextStartTime]</label>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control-->
+			
+			<!--control type="label">
+				<description>next Video End Time</description>
+				<posx>1000</posx>
+				<posy>632</posy>
+				<width>250</width>
+				<height>30</height>
+				<label>[COLOR=blue]$LOCALIZE[31000][/COLOR] : $INFO[VideoPlayer.NextEndTime]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control-->
+					
+			<control type="progress">
+				<description>Progressbar</description>
+				<posx>350</posx>
+				<posy>613</posy>
+				<width>600</width>
+				<height>10</height>
+				<info>Player.Progress</info>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+
+
+			<control type="label">
+				<posx>1000</posx>
+				<posy>580</posy>
+				<width>300</width>
+				<height>20</height>
+				<label>$INFO[Pvr.BackendName]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small1</font>
+				<textcolor>white</textcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="label">
+				<posx>1000</posx>
+				<posy>600</posy>
+				<width>300</width>
+				<height>20</height>
+				<label>Signal: $INFO[Pvr.ActStreamSignal]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small1</font>
+				<textcolor>white</textcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="label">
+				<posx>1000</posx>
+				<posy>620</posy>
+				<width>300</width>
+				<height>20</height>
+				<label>VBR: $INFO[Pvr.ActStreamVideoBitRate]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small1</font>
+				<textcolor>white</textcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="label">
+				<posx>1000</posx>
+				<posy>640</posy>
+				<width>300</width>
+				<height>20</height>
+				<label>ABR: $INFO[Pvr.ActStreamAudioBitRate]</label> 
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Small1</font>
+				<textcolor>white</textcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+
+
+
+
+		</control>
+
+	</controls>
+
+</window>
