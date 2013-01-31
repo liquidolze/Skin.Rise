@@ -146,7 +146,7 @@
 			<texture background="true" diffuse="postermatte2.png">case6.png</texture>
 		</control>
 		<control type="image">
-			<posx>-10</posx>
+			<posx>10</posx>
 			<posy>114</posy>
 			<width>476</width>
 			<height>275</height>
@@ -154,7 +154,7 @@
 			<texture background="true">glow.png</texture>
 		</control>
 		<control type="image">
-			<posx>38</posx>
+			<posx>58</posx>
 			<posy>145</posy>
 			<width>380</width>
 			<height>210</height>
@@ -185,7 +185,7 @@
 			
 		</control-->
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>140</posy>
 			<width>400</width>
 			<height>25</height>
@@ -194,7 +194,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>165</posy>
 			<width>400</width>
 			<height>25</height>
@@ -203,7 +203,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>190</posy>
 			<width>400</width>
 			<height>25</height>
@@ -212,7 +212,7 @@
 			<textcolor>white</textcolor>
 		</control>	
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>265</posy>
 			<width>400</width>
 			<height>25</height>
@@ -221,7 +221,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>240</posy>
 			<width>400</width>
 			<height>25</height>
@@ -230,7 +230,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>215</posy>
 			<width>400</width>
 			<height>25</height>
@@ -239,7 +239,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>290</posy>
 			<width>400</width>
 			<height>25</height>
@@ -248,7 +248,7 @@
 			<textcolor>white</textcolor>
 		</control>
 		<control type="label">
-			<posx>450</posx>
+			<posx>470</posx>
 			<posy>315</posy>
 			<width>400</width>
 			<height>25</height>
@@ -266,7 +266,7 @@
 			<textcolor>white</textcolor>
 		</control-->
 		<control type="image">   <!-- STARS -->
-		      <posx>450</posx>
+		      <posx>470</posx>
 		      <posy>345</posy>
 		      <width>125</width>
 		      <height>25</height>
