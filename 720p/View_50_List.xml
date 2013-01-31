@@ -50,22 +50,30 @@
 	<control type="group">
 		<control type="image">
 			<visible>Container.Content(Files) | Container.Content(movies) | Container.Content(Seasons) | Container.Content(Music)</visible>
-			<posx>413</posx>
+			<posx>403</posx>
 			<posy>125</posy>
-			<width>868</width>
+			<width>890</width>
 			<height>533</height>
 			<fadetime>100</fadetime>
 			<texture background="true" diffuse="postermatte2.png">$INFO[ListItem.Property(Fanart_Image)]</texture>
 			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
 				<effect type="slide" start="230" end="0" time="200" />				
 			</animation>
+		</control>	
+		<control type="image">
+			<visible>Container.Content(episodes)</visible>
+			<posx>35</posx>
+			<posy>413</posy>
+			<width>770</width>
+			<height>230</height>
+			<texture background="true">frame3.png</texture>
+			<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
 		</control>
-		
 		<control type="image">
 			<visible>Container.Content(Files) | Container.Content(movies) | Container.Content(Seasons) | Container.Content(Music)</visible>
-			<posx>412</posx>
+			<posx>402</posx>
 			<posy>123</posy>
-			<width>869</width>
+			<width>890</width>
 			<height>538</height>
 			<fadetime>100</fadetime>
 			<texture background="true" diffuse="postermatte2.png">case6.png</texture>
@@ -78,7 +86,7 @@
 			<visible>Container.Content(Videos) | Container.Content(movies) | Container.Content(Seasons) | Container.Content(Music)</visible>
 			<posx>20</posx>
 			<posy>125</posy>
-			<width>370</width>
+			<width>360</width>
 			<height>533</height>
 			<fadetime>100</fadetime>
 			<align>left</align>
@@ -91,7 +99,7 @@
 				<visible>Container.Content(Videos) | Container.Content(movies) |Container.Content(Seasons)</visible>
 				      <posx>20</posx>
 				      <posy>123</posy>
-				      <width>371</width>
+				      <width>361</width>
 				      <height>537</height>
 				      <fadetime>100</fadetime>
 				      <align>left</align>
@@ -103,9 +111,9 @@
 		
 		<control type="image">
 			<visible>Container.Content(Videos) | Container.Content(movies) |Container.Content(Seasons) | Container.Content(Music)</visible>
-			<posx>900</posx>
+			<posx>880</posx>
 			<posy>125</posy>
-			<width>381</width>
+			<width>401</width>
 			<height>533</height>
 			<texture border="2">colors/color_black.png</texture>
 		</control>
@@ -117,18 +125,18 @@
 	<control type="group">
 		<visible>Container.Content(episodes)</visible>
 		<control type="image">
-			<width>820</width>
+			<width>810</width>
 			<height>255</height>
-			<posx>0</posx>
+			<posx>20</posx>
 			<posy>125</posy>
-			<texture background="true" diffuse="postermatte9.png">case1.png</texture>
+			<texture background="true" diffuse="postermatte9.png">case4.png</texture>
 		</control>
 		<control type="image">
-			<width>820</width>
+			<width>810</width>
 			<height>255</height>
-			<posx>0</posx>
+			<posx>20</posx>
 			<posy>400</posy>
-			<texture background="true" diffuse="postermatte9.png">case1.png</texture>
+			<texture background="true" diffuse="postermatte9.png">case4.png</texture>
 		</control>
 		<control type="image">
 			<posx>840</posx>
@@ -154,26 +162,17 @@
 			<texture background="true" diffuse="postermatte11.png">$INFO[ListItem.Icon]</texture>
 		</control>	
 
-		<control type="image">
-			<posx>35</posx>
-			<posy>413</posy>
-			<width>750</width>
-			<height>230</height>
 
-			<!--texture background="true" diffuse="postermatte9.png">colors/color_white.png</texture-->
-			<texture background="true">frame3.png</texture>
-			<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
-		</control>
 		<control type="textbox">
 			<description>Plot</description>
 			<posx>50</posx>
 			<posy>423</posy>
-			<width>725</width>
+			<width>745</width>
 			<height>210</height>
 			<align>justify</align>
 			<aligny>top</aligny>
 			<font>Plot</font>
-			<textcolor>Black</textcolor>
+			<textcolor>White</textcolor>
 			<scroll>true</scroll>
 			<label>$INFO[ListItem.Plot]</label>
 		</control>	
@@ -226,7 +225,7 @@
 			<posy>240</posy>
 			<width>400</width>
 			<height>25</height>
-			<label>Laufzeit: $INFO[ListItem.Duration]</label>
+			<label>Laufzeit: $INFO[ListItem.Duration] Minuten</label>
 			<font>Plot</font>
 			<textcolor>white</textcolor>
 		</control>
@@ -238,6 +237,40 @@
 			<label>Bewertung: $INFO[ListItem.Rating]</label>
 			<font>Plot</font>
 			<textcolor>white</textcolor>
+		</control>
+		<control type="label">
+			<posx>450</posx>
+			<posy>290</posy>
+			<width>400</width>
+			<height>25</height>
+			<label>Regie: $INFO[ListItem.Director]</label>
+			<font>Plot</font>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="label">
+			<posx>450</posx>
+			<posy>315</posy>
+			<width>400</width>
+			<height>25</height>
+			<label>Genre: $INFO[ListItem.Genre]</label>
+			<font>Plot</font>
+			<textcolor>white</textcolor>
+		</control>
+		<!--control type="label">
+			<posx>450</posx>
+			<posy>330</posy>
+			<width>400</width>
+			<height>25</height>
+			<label>Genre: $INFO[ListItem.Property(NextAired.%d.NextDate)]</label>
+			<font>Plot</font>
+			<textcolor>white</textcolor>
+		</control-->
+		<control type="image">   <!-- STARS -->
+		      <posx>450</posx>
+		      <posy>345</posy>
+		      <width>125</width>
+		      <height>25</height>
+		      <info>ListItem.StarRating</info>
 		</control>
 	</control>
 
@@ -305,7 +338,7 @@
 
 			<itemlayout condition="Container.Content(movies) | Container.Content(seasons)" width="400" height="38">
 				<control type="label">
-				<posx>910</posx>
+				<posx>890</posx>
 				<posy>-5</posy>
 				<width>370</width>
 				<font>Small</font>
@@ -316,13 +349,13 @@
 			<focusedlayout condition="Container.Content(movies) | Container.Content(seasons)" width="380" height="40">
 			<control type="group">
 				<control type="image">
-				<posx>900</posx>
-				<width>381</width>
+				<posx>880</posx>
+				<width>401</width>
 				<height>35</height>
 				<texture border="5">button-focus2.png</texture>
 				</control>
 				<control type="label">
-				<posx>910</posx>
+				<posx>890</posx>
 				<posy>-5</posy>
 				<width>370</width>
 				<font>Small</font>
@@ -474,8 +507,8 @@
 			  	<control type="image">
 					<visible>Container.Content(episodes) | Container.Content(music)</visible>
 					<description>Studio Image</description>
-					<posx>425</posx>
-					<posy>270</posy>
+					<posx>650</posx>
+					<posy>100</posy>
 					<width>150</width>
 					<height>150</height>
 					<aspectratio>keep</aspectratio>

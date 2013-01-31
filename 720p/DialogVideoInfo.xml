@@ -7,7 +7,7 @@
 	<controls>
 
 		<include>GlobalOverlay</include>
-		
+
 		
 
 		<control type="group">
@@ -16,10 +16,10 @@
 
 			
 			<control type="image">
-				<posx>-20</posx>
-				<posy>-20</posy>
-				<width>1350</width>
-				<height>770</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
 				<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
 			</control>
 			
@@ -44,7 +44,7 @@
 		</control>
 
 			<control type="group">
-				<posx>390</posx>
+				<posx>400</posx>
 				<posy>125</posy>
 				
 				<control type="image">

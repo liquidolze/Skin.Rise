@@ -46,9 +46,9 @@
 		<control type="group">
 		<control type="image">
 			<visible>Container.Content(TVShows)</visible>
-			<posx>0</posx>
+			<posx>20</posx>
 			<posy>125</posy>
-			<width>820</width>
+			<width>810</width>
 			<height>531</height>
 			<fadetime>100</fadetime>
 			<align>right</align>
@@ -56,9 +56,9 @@
 		</control>
 		<control type="image">
 			<visible>Container.Content(tvshows)</visible>
-			<width>820</width>
+			<width>810</width>
 			<height>531</height>
-			<posx>0</posx>
+			<posx>20</posx>
 			<posy>125</posy>
 			<texture background="true" diffuse="postermatte9.png">case1.png</texture>
 		</control>		
@@ -154,7 +154,7 @@
 					<posy>6</posy>
 					<width>380</width>
 					<height>89</height>
-					<texture background="true" diffuse="postermatte2.png">case6.png</texture>
+					<texture background="true" diffuse="postermatte2.png">case1.png</texture>
 					<animation type="focus">
 						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
 						<effect type="zoom" start="100" end="108" aligny="center" time="200" reversible="false"/>
@@ -190,7 +190,7 @@
 		<!------------------------------------------------------------------------------------------>
 		<control type="group">
 		<visible>Container.Content(tvshows) | Container.Content(Music)</visible>
-		<posx>0</posx>
+		<posx>20</posx>
 		<posy>125</posy>
 		<control type="image">
 			<visible>Container.Content(TVShows)</visible>
@@ -218,7 +218,7 @@
 		<control type="textbox">
 			<description>Plot</description>
 			<posx>8</posx>
-			<posy>275</posy>
+			<posy>280</posy>
 			<width>360</width>
 			<height>248</height>
 			<align>justify</align>
