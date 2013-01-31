@@ -72,7 +72,21 @@
 		</control>
 		
 		<control type="image">
-			<posx>740</posx>
+			<posx>721</posx>
+			<posy>430</posy>
+			<width>2</width>
+			<height>200</height>
+			<texture>separator2.png</texture>
+		</control>
+		<control type="image">
+			<posx>907</posx>
+			<posy>430</posy>
+			<width>2</width>
+			<height>200</height>
+			<texture>separator2.png</texture>
+		</control>
+		<control type="image">
+			<posx>1093</posx>
 			<posy>430</posy>
 			<width>2</width>
 			<height>200</height>
@@ -291,43 +305,45 @@
 
 		<control type="image"><!--Day 1 Icon -->
 			<texture>$INFO[Window(Weather).Property(Day1.FanartCode),weather/128x128/,.png]</texture>
-			<posx>580</posx>
+			<posx>535</posx>
 			<posy>430</posy>
-			<width>120</width>
+			<width>186</width>
 			<height>120</height>
+			<align>center</align>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="label"><!--Day 1 Title-->
-			<posx>580</posx>
+			<posx>535</posx>
 			<posy>415</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>20</height>					
 			<font>Plot</font>
 			<textcolor>Blue</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>
 		<control type="label"><!--Day 1 Temp-High Low-->
-			<posx>580</posx>
+			<posx>535</posx>
 			<posy>555</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits][COLOR=Blue] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>
 		<control type="label"><!--Day 1 Outlook -->
-			<posx>580</posx>
+			<posx>535</posx>
 			<posy>585</posy>
-			<width>220</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<info>Window.Property(Day1.Outlook)</info>
 			<visible>Weather.IsFetched</visible>
 
@@ -335,44 +351,45 @@
 		
 		<control type="image"><!--Day 2 Icon -->
 			<texture>$INFO[Window(Weather).Property(Day2.FanartCode),weather/128x128/,.png]</texture>
-			<posx>760</posx>
+			<posx>721</posx>
 			<posy>430</posy>
-			<width>120</width>
+			<width>186</width>
 			<height>120</height>
-	
+			<align>center</align>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="label"><!--Day 2 Title-->
-			<posx>760</posx>             
+			<posx>721</posx>             
 			<posy>415</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>20</height>					
 			<font>Plot</font>
 			<textcolor>Blue</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>				
 		<control type="label"><!--Day 2 Temp-High Low-->
-			<posx>760</posx>
+			<posx>721</posx>
 			<posy>555</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits][COLOR=Blue] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>
 		<control type="label"><!--Day 2 Outlook -->
-			<posx>760</posx>
+			<posx>721</posx>
 			<posy>585</posy>
-			<width>220</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<info>Window.Property(Day2.Outlook)</info>
 			<visible>Weather.IsFetched</visible>
 
@@ -380,44 +397,45 @@
 		
 		<control type="image"><!--Day 3 Icon -->
 			<texture>$INFO[Window(Weather).Property(Day3.FanartCode),weather/128x128/,.png]</texture>
-			<posx>930</posx>
+			<posx>907</posx>
 			<posy>430</posy>
-			<width>120</width>
+			<width>186</width>
 			<height>120</height>
-	
+			<align>center</align>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="label"><!--Day 3 Title-->
-			<posx>930</posx>
+			<posx>907</posx>
 			<posy>415</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>20</height>					
 			<font>Plot</font>
 			<textcolor>Blue</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>		
 		<control type="label"><!--Day 3 Temp-High Low-->
-			<posx>930</posx>
+			<posx>907</posx>
 			<posy>555</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits][COLOR=Blue] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>
 		<control type="label"><!--Day 3 Outlook -->
-			<posx>930</posx>
+			<posx>907</posx>
 			<posy>585</posy>
-			<width>220</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<info>Window.Property(Day3.Outlook)</info>
 			<visible>Weather.IsFetched</visible>
 
@@ -425,44 +443,45 @@
 		
 		<control type="image"><!--Day 4 Icon -->
 			<texture>$INFO[Window(Weather).Property(Day4.FanartCode),weather/128x128/,.png]</texture>
-			<posx>1110</posx>
+			<posx>1093</posx>
 			<posy>430</posy>
-			<width>120</width>
+			<width>186</width>
 			<height>120</height>
-	
+			<align>center</align>
+			<aspectratio>keep</aspectratio>
 		</control>
 		<control type="label"><!--Day 4 Title-->
-			<posx>1110</posx>
+			<posx>1093</posx>
 			<posy>415</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>20</height>					
 			<font>Plot</font>
 			<textcolor>Blue</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>	
 		<control type="label"><!--Day 4 Temp-High Low-->
-			<posx>1110</posx>
+			<posx>1093</posx>
 			<posy>555</posy>
-			<width>250</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<label>$INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits][COLOR=Blue] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits] [/COLOR]</label>
 			<visible>Weather.IsFetched</visible>
 
 		</control>
 		<control type="label"><!--Day 4 Outlook -->
-			<posx>1110</posx>
+			<posx>1093</posx>
 			<posy>585</posy>
-			<width>220</width>
+			<width>186</width>
 			<height>50</height>					
 			<font>Plot</font>
 			<textcolor>White</textcolor>
-			<align>left</align>
+			<align>center</align>
 			<info>Window.Property(Day4.Outlook)</info>
 			<visible>Weather.IsFetched</visible>
 
