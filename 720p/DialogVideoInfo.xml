@@ -50,26 +50,33 @@
 				<control type="image">
 				    <posx>0</posx>
 				    <posy>0</posy>
-				    <width>640</width>
+				    <width>620</width>
 				    <height>533</height>
 				    <texture border="2">colors/color_white.png</texture>
 				</control>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
-					<width>640</width>
+					<width>620</width>
 					<height>131</height>
 					<texture>colors/color_black.png</texture>
 				</control>
 				<control type="image">
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(music)</visible>
 					<description>Studio Image</description>
-					<posx>520</posx>
+					<posx>480</posx>
 					<posy>20</posy>
 					<width>100</width>
 					<height>100</height>
 					<aspectratio>keep</aspectratio>
 					<texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+				</control>
+				<control type="image">   <!-- STARS -->
+				      <posx>100</posx>
+				      <posy>41</posy>
+				      <width>95</width>
+				      <height>18</height>
+				      <info>ListItem.StarRating</info>
 				</control>
 			</control>
 
@@ -412,7 +419,7 @@
 
 			<control type="list" id="50">
 				<description>Cast</description>
-				<posx>390</posx>
+				<posx>400</posx>
 				<posy>260</posy>
 				<width>650</width>
 				<height>368</height>
@@ -443,7 +450,7 @@
 				<focusedlayout height="46">
 
 					<control type="image">
-						<width>640</width>
+						<width>620</width>
 						<height>44</height>
 						<texture>colors/color_grey.png</texture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>

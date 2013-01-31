@@ -21,7 +21,8 @@
 			<posy>124</posy>
 			<width>230</width>
 			<height>535</height>
-			<texture>colors/bg3.png</texture>
+			<!--texture>colors/bg3.png</texture-->
+			<texture>case1.png</texture>
 			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
 				<effect type="slide" start="230" end="-300" time="200" />				
 			</animation>

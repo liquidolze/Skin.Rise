@@ -150,11 +150,11 @@
 				</control>	
 				<control type="image">
 					<visible>!Container.Content(movies)</visible>
-					<posx>17</posx>
+					<posx>16</posx>
 					<posy>6</posy>
 					<width>380</width>
 					<height>89</height>
-					<texture background="true" diffuse="postermatte2.png">case1.png</texture>
+					<texture background="true" diffuse="postermatte2.png">case6.png</texture>
 					<animation type="focus">
 						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
 						<effect type="zoom" start="100" end="108" aligny="center" time="200" reversible="false"/>

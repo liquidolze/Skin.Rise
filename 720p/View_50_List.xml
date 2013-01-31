@@ -62,9 +62,9 @@
 		</control>	
 		<control type="image">
 			<visible>Container.Content(episodes)</visible>
-			<posx>35</posx>
-			<posy>413</posy>
-			<width>770</width>
+			<posx>20</posx>
+			<posy>423</posy>
+			<width>807</width>
 			<height>230</height>
 			<texture background="true">frame3.png</texture>
 			<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
@@ -74,7 +74,7 @@
 			<posx>402</posx>
 			<posy>123</posy>
 			<width>890</width>
-			<height>538</height>
+			<height>537</height>
 			<fadetime>100</fadetime>
 			<texture background="true" diffuse="postermatte2.png">case6.png</texture>
 			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
