@@ -1,147 +1,227 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Foundation -->
+<!--RISE-->
 <window id="6">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<views>50,51</views>
+	<views>50, 51, 52</views>
 
-	<controls>
+	<controls>	
+		
+		<!--Hidden Search Button-->
 		<control type="radiobutton" id="19">
 			<description>Filter (hidden)</description>
 			<include>HiddenButton</include>
 		</control>
 
-		<include>GlobalBackground</include>
+		<!--Global Background-->
+		<include>GlobalBackground</include>		
+	
+	
+		<!--Fanart Control.IsVisible(50), Control.IsVisible(51), Control.IsVisible(52)-->		
+		<control type="group">	
+			<visible>Control.IsVisible(50) | Control.IsVisible(51)  | Control.IsVisible(52)</visible>			
 
-		<include>View_50_List</include>
-		<include>View_51_Banner</include>
-
-		<control type="image">
-			<posx>-225</posx>
-			<posy>124</posy>
-			<width>230</width>
-			<height>535</height>
-			<!--texture>colors/bg3.png</texture-->
-			<texture>case1.png</texture>
-			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
-				<effect type="slide" start="230" end="-300" time="200" />				
-			</animation>
+	
+			<control type="image">	<!--Video Genres-->	
+				<visible>Container.Content(genres)</visible>
+				<posx>0</posx>
+				<posy>128</posy>
+				<width>1197</width> 
+				<height>588</height>					
+				<texture background="true">genres_fanart/$INFO[ListItem.Label].jpg</texture>		
+				<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+				<fadetime>400</fadetime>					
+			</control>
+			<control type="image">	<!--Other Video-->
+				<visible>[Window.IsActive(videolibrary) | Window.IsActive(videofiles) | Window.IsActive(videolibrary)] + [!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(genres)]</visible>
+				<posx>0</posx>
+				<posx>0</posx>
+				<posy>128</posy>
+				<width>1197</width> 
+				<height>588</height>					
+				<texture background="true">hover_videos.png</texture>		
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<fadetime>400</fadetime>			
+			</control>	
 		</control>
+	
+		<!--View-->
+		<include>View_50_List</include>	
+		<include>View_51_Banner</include>	
 		
-		<control type="grouplist" id="9000">
-			<posx>-225</posx>
-			<posy>140</posy>
-			<width>220</width>
-			<height>600</height>
-			<itemgap>2</itemgap>
-			<onleft>50</onleft>
-			<onright>50</onright>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
-			<orientation>vertical</orientation>
+		
+		<!--Start Sub Menu-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52)</visible>				
+			<control type="image">				<!--Sub Menu Panel-->				
+				<posx>0</posx>
+				<posy>123</posy><!--96-->
+				<width>230</width>
+				<height>535</height><!--651-->
+				<texture>case1.png</texture>
 				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
-					<effect type="slide" start="230" end="-300" time="200" />				
+					<effect type="slide" start="-10" end="-600" time="200" />				
 				</animation>
-
+			</control>		
+			<control type="image">				
+				<visible>Control.IsVisible(50) | Control.IsVisible(52) | [Control.IsVisible(51) + ControlGroup(9000).HasFocus()]</visible>	
+				<posx>310</posx>
+				<posy>340</posy>
+				<width>40</width>
+				<height>120</height>
+				<texture>menu_tab.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>
+			</control>	
+			<control type="image">				<!--Sub Menu Tab Top-->
+				<visible>Control.IsVisible(50) | Control.IsVisible(51) + !ControlGroup(9000).HasFocus()</visible>
+				<posx>0</posx>
+				<posy>340</posy>
+				<width>40</width>
+				<height>120</height>
+				<texture>menu_tab.png</texture>
+			</control>
 		
-			<control type="button" id="2">
-				<description>View</description>
-				<width>220</width>
-				<align>left</align>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->	
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>	
+				<posx>0</posx>
+				<posy>140</posy>
+				<width>469</width>
+				<height>740</height>
+				<itemgap>-</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>					
+				<orientation>vertical</orientation>	
+				
+				<!--Buttons-->
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>230</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>Plot</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="201">			<!--Seperator-->						
+					<width>230</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>separator.png</texture>				
+				</control>	
+				<control type="radiobutton" id="14">	<!--Button Watched Toggle-->					
+					<width>230</width>
+					<align>left</align>				
+					<label>41039</label>								
+				</control>	
+				<control type="button" id="3">			<!--Button Sort-->					
+					<width>230</width>
+					<align>left</align>					
+				</control>		
+				<control type="button" id="21">			<!--Button Search-->	
+					<visible>IsEmpty(Window.Property(filter))</visible>							
+					<width>230</width>
+					<align>left</align>
+					<label>137</label>					
+					<onclick>SendClick(videolibrary,19)</onclick>
+					<onclick>SetFocus(22)</onclick>						
+				</control>
+				<control type="button" id="22">			<!--Button Show Filter Label-->	
+					<visible>!IsEmpty(Window.Property(filter))</visible>					
+					<width>230</width>
+					<align>left</align>				
+					<label>$INFO[Window.Property(filter)]</label>					
+					<onclick>SendClick(videolibrary,19)</onclick>
+					<onclick>SetFocus(21)</onclick>						
+				</control>		
+				<control type="radiobutton" id="202">	<!--Button Scroll Info-->						
+					<width>230</width>
+					<align>left</align>				
+					<label>41091</label>					
+					<onclick>Skin.ToggleSetting(ScrollInfo)</onclick>
+					<selected>Skin.HasSetting(ScrollInfo)</selected>					
+				</control>	
+				<control type="radiobutton" id="203">	<!--Button Logo Movie-->						
+					<visible>Container.Content(movies)</visible>					
+					<width>230</width>
+					<align>left</align>				
+					<label>Logo</label>					
+					<onclick>Skin.ToggleSetting(LogoMovies)</onclick>
+					<selected>Skin.HasSetting(LogoMovies)</selected>					
+				</control>		
+				<control type="radiobutton" id="204">	<!--Button Logo TV-->
+					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>						
+					<width>230</width>
+					<align>left</align>				
+					<label>Logo</label>					
+					<onclick>Skin.ToggleSetting(LogoTVShows)</onclick>
+					<selected>Skin.HasSetting(LogoTVShows)</selected>					
+				</control>	
+				<control type="radiobutton" id="205">	<!--Button HD-Flags Movie-->
+					<visible>Container.Content(movies) + [Container(50).HasFocus() | Container(52).HasFocus()]</visible>							
+					<width>230</width>
+					<align>left</align>				
+					<label>HD-Flag</label>					
+					<onclick>Skin.ToggleSetting(HDFlags)</onclick>
+					<selected>Skin.HasSetting(HDFlags)</selected>					
+				</control>	
+				<control type="image" id="206">			<!--Space-->						
+					<width>230</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_space.png</texture>				
+				</control>		
+				<control type="label" id="300">			<!--View:-->					
+					<width>230</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>AvalonLight35</font>
+					<label>[B]$LOCALIZE[457][/B]</label>
+					<textcolor>White</textcolor>						
+				</control>	
+				<control type="image" id="301">			<!--Seperator-->						
+					<width>230</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>	
+				<control type="button" id="302">		<!--View List-->				
+					<width>230</width>
+					<align>left</align>		
+					<label>List</label>					
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>
+				<control type="button" id="303">		<!--View Poster-->
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>					
+					<width>230</width>
+					<align>left</align>		
+					<label>Banner</label>						
+					<onclick>Container.SetViewMode(51)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>		
+				<!--control type="button" id="304">		
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>					
+					<width>469</width>
+					<align>left</align>		
+					<label>Poster Panel</label>						
+					<onclick>Container.SetViewMode(52)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control-->		
 			</control>
-
-			<control type="button" id="3">
-				<description>Sort</description>
-				<width>220</width>
-				<align>left</align>
-			</control>
-
-			<control type="togglebutton" id="4">
-				<description>Ascending</description>
-				<width>220</width>
-				<align>left</align>
-				<label>584</label>
-				<altlabel>585</altlabel>
-			</control>
-
-			<control type="button" id="5">
-				<description>Files</description>
-				<width>220</width>
-				<align>left</align>
-				<label>31001</label>
-				<onclick>SetFocus(50)</onclick>
-			</control>
-
-			<control type="radiobutton" id="7">
-				<description>Stack</description>
-				<width>220</width>
-				<align>left</align>
-				<label>14000</label>
-				<altlabel>14001</altlabel>
-			</control>
-
-			<control type="button" id="8">
-				<description>Search</description>
-				<width>220</width>
-				<align>left</align>
-				<label>137</label>
-			</control>
-
-			<control type="radiobutton" id="11">
-				<description>Unlock Shares</description>
-				<width>220</width>
-				<align>left</align>
-				<label>20336</label>
-				<onclick>xbmc.mastermode</onclick>
-				<selected>system.ismaster</selected>
-				<visible>system.haslocks</visible>
-			</control>
-
-			<control type="radiobutton" id="16">
-				<description>PartyMode</description>
-				<width>220</width>
-				<align>left</align>
-				<label>589</label>
-			</control>
-
-			<control type="radiobutton" id="17">
-				<description>Flatten</description>
-				<width>220</width>
-				<align>left</align>
-				<label>20411</label>
-			</control>
-
-			<control type="button" id="21">
-				<description>Activate Filter</description>
-				<width>220</width>
-				<align>left</align>
-				<label>587</label>
-				<onclick>SendClick(videolibrary,19)</onclick>
-				<onclick>SetFocus(22)</onclick>
-				<visible>IsEmpty(Window.Property(filter))</visible>
-			</control>
-
-			<control type="button" id="22">
-				<description>Show Filter Label</description>
-				<width>220</width>
-				<align>left</align>
-				<label>$INFO[Window.Property(filter)]</label>
-				<onclick>SendClick(videolibrary,19)</onclick>
-				<onclick>SetFocus(21)</onclick>
-				<visible>!IsEmpty(Window.Property(filter))</visible>
-			</control>
-
-			<control type="button" id="98">
-				<description>Open Player Controls</description>
-				<width>220</width>
-				<align>left</align>
-				<label>31015</label>
-				<onclick>ActivateWindow(playercontrols)</onclick>
-				<visible>Player.HasMedia</visible>
-			</control>
-
-		</control>
-
+		</control>	
+	
+		<!--Dim Youtube Search-->
+		<!--control type="image">	
+			<visible>Skin.HasSetting(youtube)</visible>
+			<include>Dimensions_Fullscreen</include>			
+			<animation time="500" effect="fade" start="100" end="0" tween="cubic" easing="in">WindowOpen</animation>
+			<animation time="500" effect="fade" start="0" end="0" tween="cubic" easing="in">WindowClose</animation>
+			<texture background="true">background.png</texture>			
+		</control-->	
+		
 	</controls>
-
 </window>

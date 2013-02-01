@@ -3,6 +3,8 @@
 <window id="0">
 	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onload>Skin.Reset(youtube)</onload>
+	<onload>Skin.Reset(OtherView)</onload>
 	<animation type="WindowClose">
 	<effect type="fade" start="100" end="0" time="400" />
 	</animation>
@@ -127,7 +129,8 @@
 						<label2>$INFO[Window.Property(Movies.Count)]</label2>
 						<thumb>home/home_movie.png</thumb>
 						<onclick>ActivateWindow(Video,movietitles,return)</onclick>
-						<!--visible>Library.HasContent(Movies)</visible-->
+						<visible>Library.HasContent(Movies)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
 					</item>
 									
 					<item id="2">
@@ -148,7 +151,8 @@
 						<thumb>home/home_tvshow.png</thumb>
 						<label2>$INFO[Window.Property(TVShows.Count)]</label2>
 						<onclick>ActivateWindow(Video,tvshowtitles)</onclick>
-						<!--visible>Library.HasContent(TVShows)</visible-->
+						<visible>Library.HasContent(TVShows)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton)</visible>
 					</item>
 					
 					<item id="5">
@@ -194,9 +198,10 @@
 				</item-->
 				
 				<item id="10">	<!--Video-->						
-					<label>Videos</label>							
-					<onclick>ActivateWindow(video,root)</onclick>
+					<label>Videos</label>	
 					<thumb>home/home_videos.png</thumb>
+					<onclick>ActivateWindow(Video,root)</onclick>
+					<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 				</item>
 
 					<item id="11">

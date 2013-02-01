@@ -6,7 +6,7 @@
 	<include name="View_51_Banner">
 	
 	<!--Basics-->
-	
+
 	<control type="group">
 		<visible>Control.IsVisible(51)</visible>
 
@@ -83,6 +83,7 @@
 			<pagecontrol>60</pagecontrol>
 			<viewtype label="100000">banner</viewtype>
 			<scrolltime>200</scrolltime>
+			
 
 			<itemlayout width="400" height="104">
 				<!--control type="label">
