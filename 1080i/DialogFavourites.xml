@@ -1,0 +1,62 @@
+<!-- RISE -->
+<window type="dialog" id="134">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>	
+
+	<!--Sub Menu Panel-->
+		<control type="image">
+			<posx>-20</posx> 
+			<posy>91</posy>
+			<width>600</width>
+			<height>730</height>
+			<texture>homemenu.png</texture>
+			<animation effect="slide" start="-600" end="-10" time="200" >WindowOpen</animation>
+			<animation effect="slide" start="-10" end="-600" time="200" >WindowClose</animation> 	
+		</control>
+
+	<!--List 450-->
+		<control type="list" id="450">
+			<posx>48</posx>
+			<posy>170</posy>
+			<width>470</width>
+			<height>600</height>
+			<itemgap>-</itemgap>
+			<onleft>450</onleft>
+			<onright>450</onright>
+			<onup>450</onup>
+			<ondown>450</ondown>			
+			<animation effect="slide" start="-600" end="-10" time="200" >WindowOpen</animation> 		
+			<animation effect="slide" start="-10" end="-600" time="200" >WindowClose</animation> 	
+
+			<itemlayout height="60">				
+				<control type="label">						
+					<width>470</width>
+					<height>60</height>
+					<textcolor>MainBlue</textcolor>
+					<textoffsetx>50</textoffsetx>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+
+			<focusedlayout height="60">
+				<control type="image">						
+					<width>470</width>
+					<height>60</height>
+					<texture>listcontrol_item_selected_wide.png</texture>
+				</control>
+				<control type="label">						
+					<width>470</width>
+					<height>60</height>
+					<textcolor>White</textcolor>
+					<textoffsetx>50</textoffsetx>
+					<info>ListItem.Label</info>
+				</control>				
+			</focusedlayout>
+
+		</control>		
+
+	</controls>
+
+</window>

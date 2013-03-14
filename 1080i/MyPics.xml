@@ -1,0 +1,161 @@
+<!--RISE-->
+<window id="2">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50</views>
+
+	<controls>
+		
+		<!--Global Background-->
+		<include>GlobalBackground</include>		
+		<!-- Header Pics-->
+		<include>Header_Pictures</include>
+		<!--Common Clock-->	
+		<include>Common_Clock</include>			
+		<!--Music_NowPlaying-->			
+		<include>NowPlayingMusic</include>		
+		<!--Video_NowPlaying-->			
+		<include>NowPlayingVideo</include>	
+	
+		<!--Fanart Control.IsVisible(50)-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>					
+			<include>animation_hover_slide</include>
+			<include>animation_fade</include>		
+			<control type="image">	<!--Fanart-->		
+				<posx>0</posx>
+				<posx>0</posx>
+				<posy>128</posy>
+				<width>1197</width> 
+				<height>588</height>					
+				<texture background="true" diffuse="hover_matte.png">hover_pictures.png</texture>		
+				<colordiffuse>HoverDiffuse</colordiffuse>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<fadetime>400</fadetime>					
+			</control>
+		</control>
+	
+		<!--View-->
+		<include>View_50_List</include>
+	
+		<!--Start Sub Menu-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>
+			<include>animation_hover_slide</include>
+			<control type="image">				<!--Sub Menu Panel-->
+				<posx>-20</posx>
+				<posy>60</posy><!--96-->
+				<width>600</width>
+				<height>790</height><!--651-->
+				<texture>homemenu.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />				
+				</animation>
+			</control>		
+			<control type="image">				<!--Sub Menu Tab-->				
+				<posx>600</posx>
+				<posy>330</posy>
+				<width>64</width>
+				<height>199</height>
+				<texture>menu_tab.png</texture>
+				<include>animation_fade</include>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>				
+			</control>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->	
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>	
+				<posx>48</posx>
+				<posy>140</posy>
+				<width>469</width>
+				<height>620</height>
+				<itemgap>-</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>					
+				<orientation>vertical</orientation>	
+				
+				<!--Button-->	
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="201">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>	
+				<control type="button" id="3">			<!--Sort-->					
+					<width>469</width>
+					<align>left</align>					
+				</control>
+				<control type="togglebutton" id="4">	<!--Ascending-->					
+					<width>469</width>
+					<align>left</align>
+					<label>584</label>
+					<altlabel>585</altlabel>					
+				</control>
+				<control type="button" id="6">			<!--Slideshow-->
+					<visible>!ListItem.IsFolder</visible>
+					<width>469</width>
+					<align>left</align>
+					<label>108</label>						
+				</control>
+				<control type="button" id="7">			<!--Recursive Slideshow-->
+					<visible>ListItem.IsFolder</visible>
+					<width>469</width>
+					<align>left</align>
+					<label>108</label>						
+				</control>
+				<control type="radiobutton" id="9">		<!--Randomise-->					
+					<width>469</width>
+					<align>left</align>
+					<label>13319</label>				
+				</control>
+				<control type="button" id="98">			<!--Open Player Controls-->	
+					<visible>Player.HasMedia</visible>
+					<width>469</width>
+					<align>left</align>
+					<label>31015</label>
+					<onclick>ActivateWindow(playercontrols)</onclick>					
+				</control>
+				<control type="image" id="203">			<!--Space-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_space.png</texture>				
+				</control>		
+				<control type="label" id="300">			<!--View:-->						
+					<width>469</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[457][/B]</label>
+					<textcolor>White</textcolor>						
+				</control>	
+				<control type="image" id="301">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>		
+				<control type="button" id="302">		<!--View List-->					
+					<align>left</align>		
+					<label>List</label>					
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>	
+			</control>
+		</control>
+		
+	</controls>
+
+</window>

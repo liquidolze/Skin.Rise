@@ -1,0 +1,226 @@
+<!--RISE-->
+<window id="129">
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+
+	<controls>	
+
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Start SmartPlaylistEditor									-->
+	<!-------------------------------------------------------------------------------------------->	
+		
+		<control type="group">
+			<posx>160</posx>
+			<posy>230</posy>
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Dialog Background									-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1460</width>
+				<height>680</height>
+				<texture>dialog_background.png</texture>
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Label												-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<control type="label">
+				<description>header label</description>
+				<posx>100</posx>
+				<posy>100</posy>
+				<width>1260</width>
+				<font>RISE40</font>
+				<align>center</align>
+				<label>21421</label>
+			</control>
+
+			<control type="label">
+				<description>Rule match label</description>
+				<posx>100</posx>
+				<posy>150</posy>
+				<width>1260</width>
+				<align>center</align>
+				<textcolor>MainBlue</textcolor>
+				<label>21422</label>
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--										Rules											-->
+	<!-------------------------------------------------------------------------------------------->		
+			
+			<control type="group" id="9001">
+
+			<!--(1) Rules Field-->
+				<control type="spincontrolex" id="15">
+					<description>Rule Field</description>
+					<posx>150</posx>
+					<posy>210</posy>
+					<width>1160</width>
+					<texturefocus></texturefocus>
+					<font>-</font>
+					<onright></onright>
+					<onleft></onleft>
+					<onup>9000</onup>
+					<ondown>16</ondown>
+				</control>
+
+				<control type="label">
+					<visible>Control.HasFocus(15)</visible>
+					<description>Rule Field label</description>
+					<posx>150</posx>
+					<posy>210</posy>
+					<width>400</width>
+					<textcolor>White</textcolor>
+					<label>$INFO[Control.GetLabel(15)]</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(15)</visible>
+					<description>Rule Field label</description>
+					<posx>150</posx>
+					<posy>210</posy>
+					<width>400</width>
+					<textcolor>LightGrey</textcolor>
+					<label>$INFO[Control.GetLabel(15)]</label>
+				</control>
+				
+			<!--(2) Rules operator-->	
+				<control type="spincontrolex" id="16">
+					<description>Rule operator</description>
+					<posx>150</posx>
+					<posy>260</posy>
+					<width>1160</width>
+					<font>-</font>
+					<texturefocus></texturefocus>
+					<onright></onright>
+					<onleft></onleft>
+					<onup>15</onup>
+					<ondown>17</ondown>
+				</control>
+
+				<control type="label">
+					<visible>Control.HasFocus(16)</visible>
+					<description>Rule Field label</description>
+					<posx>150</posx>
+					<posy>260</posy>
+					<width>400</width>
+					<textcolor>White</textcolor>
+					<label>$INFO[Control.GetLabel(16)]</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(16)</visible>
+					<description>Rule Field label</description>
+					<posx>150</posx>
+					<posy>260</posy>
+					<width>400</width>
+					<textcolor>LightGrey</textcolor>
+					<label>$INFO[Control.GetLabel(16)]</label>
+				</control>
+			</control>
+
+		<!--Textbox-->	
+			<control type="image">
+				<posx>150</posx>
+				<posy>350</posy>
+				<width>750</width>
+				<height>60</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="20">keybord/KeyboardEditArea.png</texture>
+			</control>
+		<!--Text-->	
+			<control type="button" id="17">
+				<description>Value Button</description>
+				<posx>150</posx>
+				<posy>350</posy>
+				<width>878</width>
+				<align>left</align>
+				<textcolor>LightGrey</textcolor>
+				<focusedcolor>White</focusedcolor>
+				<disabledcolor>LightGrey</disabledcolor>
+				<texturefocus></texturefocus>
+				<label>-</label>
+				<onup>16</onup>
+				<onleft></onleft>
+				<onright>20</onright>
+				<ondown>9000</ondown>
+			</control>			
+			
+		<!--Search-->
+			<control type="button" id="20">
+				<description>Browse Button</description>
+				<posx>1015</posx>
+				<posy>340</posy>
+				<width>250</width>			
+				<height>80</height>
+				<label>1024</label>
+				<font>RISE25</font>
+				<textcolor>Black</textcolor>
+				<focusedcolor>White</focusedcolor>
+				<disabledcolor>Grey</disabledcolor>		
+				<texturefocus border="15">button-green.png</texturefocus>
+				<texturenofocus border="15">button-clear.png</texturenofocus>	
+				<onup></onup>
+				<onleft>17</onleft>
+				<onright></onright>
+				<ondown>9000</ondown>
+			</control>
+		
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Button	OK, Cancel "botton"							-->
+	<!-------------------------------------------------------------------------------------------->				
+	
+			<control type="group" id="9000">
+
+				<control type="button" id="18">
+					<description>Ok Button</description>
+					<posx>450</posx>
+					<posy>450</posy>
+					<width>250</width>			
+					<height>80</height>
+					<label>186</label>
+					<font>RISE25</font>
+					<textcolor>Black</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<disabledcolor>Grey</disabledcolor>		
+					<texturefocus border="15">button-green.png</texturefocus>
+					<texturenofocus border="15">button-clear.png</texturenofocus>	
+					<onup>17</onup>
+					<onleft>18</onleft>
+					<onright>19</onright>
+					<ondown>15</ondown>
+				</control>	
+				
+				<control type="button" id="19">
+					<description>Cancel Button</description>
+					<posx>720</posx>
+					<posy>450</posy>
+					<width>250</width>			
+					<height>80</height>
+					<label>222</label>
+					<font>RISE25</font>
+					<textcolor>Black</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<disabledcolor>Grey</disabledcolor>		
+					<texturefocus border="15">button-red.png</texturefocus>
+					<texturenofocus border="15">button-clear.png</texturenofocus>	
+					<onup>17</onup>
+					<onleft>18</onleft>
+					<onright>19</onright>
+					<ondown>15</ondown>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,37 @@
+<!--RISE-->
+<window id="2903">	
+	<defaultcontrol></defaultcontrol>		
+	
+	
+	<!---------------------------------------------------->
+	<!--			MusicOverlay.xml 					-->
+	<!---------------------------------------------------->
+	
+	<!--start automatically MusicOSD.xml after 10 seconds if no action-->
+	
+	
+	<visible>Container.Content(songs) | Container.Content(albums)</visible>		<!--Only visible when list in songs or albums-->
+	<visible>Player.HasAudio</visible>											<!--Only visible when play songs-->
+	<visible>Skin.HasSetting(MusicOSD)</visible>								<!--Only visible Music OSD is activate-->
+	
+	<visible>!Container(50).OnNext</visible>									<!--Short "close and open" MusicOverlay.xml when scroll down-->
+	<visible>!Container(50).OnPrevious</visible>								<!--Short "close and open" MusicOverlay.xml when scroll up-->	
+	
+	<visible>!Window.IsActive(musicosd)</visible>								<!--Close OSD when Music-OSD open-->
+	<visible>!Window.IsActive(contextmenu)</visible>							<!--Close OSD when Contex Menu open-->
+	<visible>!Window.IsActive(songinformation)</visible>						<!--Close OSD when Song Info open-->
+	<visible>!Window.IsActive(virtualkeyboard)</visible>						<!--Close OSD when Keybord open-->
+	
+	
+	<onload>AlarmClock(MusicOSD,ActivateWindow(musicosd),00:10,silent)</onload>	<!--When MusicOverlay.xml start alarm counter "10sec then open OSD"-->
+	<onunload>CancelAlarm(MusicOSD,true)</onunload>								<!--When MusicOverlay.xml close stop alarm counter-->
+	
+	
+	<!--In MusicNav.xml: include to the Side-Menu Group 9000 to the buttons -->		
+	<!--<onfocus>Dialog.Close(musicoverlay)</onfocus>-->	
+	
+	<controls>	
+	
+	</controls>
+
+</window>

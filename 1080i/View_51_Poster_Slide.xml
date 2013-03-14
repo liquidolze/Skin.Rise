@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RISE -->
+<includes>
+
+
+	<include name="View_51_Poster_Slide">
+	
+	<!--Basics-->
+
+	<control type="group">
+		<visible>Control.IsVisible(51)</visible>
+		<include>animation_hover_slide</include>
+		
+		<control type="image">
+			<posx>1170</posx>
+			<posy>150</posy>
+			<width>780</width>
+			<height>750</height>
+			<texture diffuse="postermatte2.png">colors/color_grey1.png</texture>
+		</control>	
+		<control type="image">
+			<visible>Container.Content(tvshows)</visible>
+			<posx>1170</posx>
+			<posy>150</posy>
+			<width>780</width>
+			<height>750</height>
+			<texture background="true" diffuse="postermatte2.png">case6.png</texture>
+		</control>
+	</control>
+	
+	
+	
+	<!--Banner-List-->	
+
+		<description>Banner View (id=51)</description>
+
+		
+		<control type="list" id="51">
+			<include>animation_hover_slide</include>
+			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Music)</visible>
+			<posx>1180</posx>
+			<posy>160</posy>
+			<width>720</width>
+			<height>720</height>
+			<onleft>9000</onleft>
+			<onright>60</onright>
+			<onup>51</onup>
+			<ondown>51</ondown>
+			<pagecontrol>60</pagecontrol>
+			<viewtype label="100000">banner</viewtype>
+			<scrolltime>200</scrolltime>
+			
+
+			<itemlayout width="720" height="145">
+				<!--control type="label">
+					<posx>30</posx>
+					<posy>0</posy>
+					<width>380</width>
+					<font>Small</font>
+					<label></label>
+				</control-->
+					
+				<control type="image">
+					<posx>30</posx>
+					<posy>6</posy>
+					<width>650</width>
+					<height>130</height>
+					<texture background="true" diffuse="postermatte2.png">$INFO[ListItem.Art(banner)]</texture>
+					<animation effect="fade" start="50" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<visible>!Container.Content(movies)</visible>
+					<posx>30</posx>
+					<posy>6</posy>
+					<width>650</width>
+					<height>130</height>
+					<texture background="true" diffuse="postermatte2.png">case6.png</texture>
+				</control>
+
+			</itemlayout>
+
+			<focusedlayout width="720" height="155">
+			
+				<control type="image">
+					<posx>5</posx>
+					<posy>-10</posy>
+					<width>670</width>
+					<height>160</height>
+					<texture background="true" diffuse="postermatte2.png">Glassy.png</texture>
+					<animation type="focus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="100" end="108" align="center" time="200" reversible="false"/>
+					</animation>
+					<animation type="unfocus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="108" end="100" aligny="center" time="200" reversible="false"/>
+					</animation>
+					<aspectratio>stretch</aspectratio>
+				</control>
+			
+				<control type="image">
+					<posx>16</posx>
+					<posy>6</posy>
+					<width>650</width>
+					<height>130</height>
+					<texture fallback="thumbs/tvshow_banner.jpg" background="true" diffuse="postermatte2.png">$INFO[ListItem.Art(banner)]</texture>
+					<animation type="focus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="100" end="108" aligny="center" time="200" reversible="false"/>
+					</animation>
+					<animation type="unfocus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="108" end="100" aligny="center" time="200" reversible="false"/>
+					</animation>
+					<aspectratio>stretch</aspectratio>
+				</control>	
+				<control type="image">
+					<visible>!Container.Content(movies)</visible>
+					<posx>16</posx>
+					<posy>6</posy>
+					<width>650</width>
+					<height>130</height>
+					<texture background="true" diffuse="postermatte2.png">case6.png</texture>
+					<animation type="focus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="100" end="108" aligny="center" time="200" reversible="false"/>
+					</animation>
+					<animation type="unfocus">
+						<effect type="slide" start="0,0" end="0,0" aligny="center" time="200" reversible="false"/>
+						<effect type="zoom" start="108" end="100" aligny="center" time="200" reversible="false"/>
+					</animation>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				
+
+
+				
+				<control type="label">
+					<posx>10</posx>
+					<posy>-5</posy>
+					<width>380</width>
+					<font>Small</font>
+					<label></label>
+				</control>
+
+			</focusedlayout>
+
+		</control>	
+		
+		
+
+
+
+		<!------------------------------------------------------------------------------------------>
+		<!----------------------------- TVSHOWS SEASONS INFOS--------------------------------------->
+		<!------------------------------------------------------------------------------------------>
+		<control type="group">
+		<visible>Container.Content(tvshows) | Container.Content(Music)</visible>
+		<include>animation_hover_slide</include>
+		<posx>0</posx>
+		<posy>150</posy>
+		
+		<control type="image">
+			<visible>Container.Content(TVShows)</visible>
+			<posx>0</posx>
+			<posy>5</posy>
+			<width>430</width>
+			<height>737</height>
+			<texture border="2">colors/color_black.png</texture>
+		</control>
+		<control type="fadelabel">
+			<posx>10</posx>
+			<posy>15</posy>
+			<width>360</width>
+			<height>20</height>
+			<font>Medium</font>
+			<textcolor>white</textcolor>
+			<scroll>true</scroll>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Title]</label>
+			<scrollout>true</scrollout>
+			<pauseatend>2000</pauseatend>
+		</control>
+
+		<control type="textbox">
+			<description>Plot</description>
+			<posx>8</posx>
+			<posy>480</posy>
+			<width>410</width>
+			<height>248</height>
+			<align>justify</align>
+			<aligny>top</aligny>
+			<font>Plot</font>
+			<textcolor>White</textcolor>
+			<scrollout>true</scrollout>
+			<label>$INFO[ListItem.Plot]</label>
+		</control>
+
+		</control>
+	
+	
+		
+		<!-------------------------------------------------------------------------------------------->
+		
+		
+		<control type="scrollbar" id="60">
+			<posx>1250</posx>
+			<posy>120</posy>
+			<height>543</height>
+			<onleft>51</onleft>
+			<onright>9000</onright>
+			<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+			<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling">Conditional</animation>
+		</control>
+	</include>
+
+</includes>

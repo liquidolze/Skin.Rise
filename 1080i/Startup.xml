@@ -1,0 +1,35 @@
+﻿<!--RISE-->
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+		<allowoverlay>no</allowoverlay>			
+		<controls>	
+
+			<!-- Startup Script -->	
+		
+			<!--
+			<control type="button" id="10"> 
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>1</width>
+				<height>1</height>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>				
+				<onfocus>XBMC.RunScript(script.randomitems,limit=10&amp;unplayed=false)</onfocus>				
+				<onfocus>SetFocus(8999)</onfocus>
+			</control>				
+			-->
+		
+			<!-- Replace Window -->	
+			<control type="button" id="10"> 
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>1</width>
+				<height>1</height>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+				<description>Trigger</description>
+				<onfocus>ReplaceWindow(Home)</onfocus>				
+			</control>
+			
+		</controls>
+</window>

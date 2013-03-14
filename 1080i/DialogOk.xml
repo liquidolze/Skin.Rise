@@ -1,0 +1,91 @@
+﻿<!-- RISE -->
+<window id="2002">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>		
+
+		<include>Dim</include>		
+		
+		<control type="group">
+			<posx>570</posx>
+			<posy>333</posy>			
+		
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>768</width>
+				<height>549</height>
+				<texture>dialog_background_big.png</texture>
+			</control>
+
+			<control type="label" id="1">
+				<description>heading</description>
+				<posx>80</posx>
+				<posy>80</posy>
+				<width>600</width>
+				<label>-</label>
+				<font>RISE40</font>				
+				<align>center</align>
+			</control>
+
+			<control type="label" id="2">
+				<description>Line 1</description>
+				<posx>80</posx>
+				<posy>150</posy>
+				<width>600</width>
+				<label>-</label>
+				<align>center</align>
+			</control>
+
+			<control type="label" id="3">
+				<description>Line 2</description>
+				<posx>80</posx>
+				<posy>180</posy>
+				<width>600</width>
+				<label>-</label>
+				<align>center</align>
+			</control>
+
+			<control type="label" id="4">
+				<description>Line 3</description>
+				<posx>80</posx>
+				<posy>210</posy>
+				<width>750</width>
+				<label>-</label>
+				<align>center</align>
+			</control>
+
+			<control type="button" id="10">
+				<description>Ok</description>
+				<posx>278</posx>
+				<posy>340</posy>
+				<width>225</width>
+				<label>186</label>
+				<height>80</height>
+				<font>RISE32</font>
+				<textcolor>White</textcolor>
+				<focusedcolor>White</focusedcolor>					
+				<texturefocus>button-green.png</texturefocus>
+				<texturenofocus>button-clear.png</texturenofocus>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onup>10</onup>
+				<ondown>10</ondown>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

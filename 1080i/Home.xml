@@ -1,0 +1,313 @@
+<!--RISE-->
+<window id="0">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<onload>Skin.Reset(youtube)</onload>
+	<onload>Skin.Reset(OtherView)</onload>
+	<controls>
+		
+		<!--Globalbackground-->
+		<include>GlobalBackground</include>
+		<!--Common Clock-->	
+		<include>Common_Clock</include>
+		<!--Home Weather-->
+		<include>Home_Weather</include>	
+		<!--Header Home-->
+		<include>Header_Home</include>
+		<!--Music_NowPlaying-->			
+		<include>NowPlayingMusicHome</include>	
+		<!--Video_NowPlaying-->			
+		<include>NowPlayingVideoHome</include>	
+		
+
+		
+		<!--Widget XBMC recommended -->	
+		<control type="image">	
+			<visible>Control.HasFocus(8004) | ControlGroup(8889).HasFocus()</visible>
+			<posx>0</posx>
+			<posy>128</posy>
+			<width>1197</width>
+			<height>660</height>			
+			<include>animation_fade</include>			
+			<texture background="true" fallback="hover_videos.png" diffuse="hover_matte.png">$INFO[Container(8004).ListItem.Thumb]</texture>
+			<colordiffuse>HoverDiffuse</colordiffuse>
+			<aspectratio scalediffuse="false" align="right">scale</aspectratio>
+			<include>animation_hover_slide</include>
+			<fadetime>300</fadetime>			
+		</control>	
+		
+		<control type="image">
+			<width>1050</width>
+			<height>150</height>
+			<posx>0</posx>
+			<posy>835</posy>
+			<texture>colors/home-shadow.png</texture>
+			<animation effect="fade" time="1000" delay="0" condition="Container(300).HasFocus(6)">Conditional</animation>
+			<animation effect="fade" time="1000" delay="0">WindowOpen</animation>		
+			<animation effect="slide" start="0" end="-1980" tween="cubic" easing="inout" time="1000" >WindowClose</animation>
+		</control>
+		<control type="image">
+			<width>500</width>
+			<height>130</height>
+			<posx>-30</posx>
+			<posy>960</posy>
+			<texture>colors/home-shadow.png</texture>
+			<animation effect="fade" time="1000" delay="0" condition="Container(300).HasFocus(6)">Conditional</animation>
+			<animation effect="fade" time="1000" delay="0">WindowOpen</animation>		
+			<animation effect="slide" start="0" end="-1980" tween="cubic" easing="inout" time="1000" >WindowClose</animation>
+		</control>
+		<control type="image">
+			<width>400</width>
+			<height>100</height>
+			<posx>30</posx>
+			<posy>870</posy>
+			<texture>colors/widget-back.png</texture>
+			<animation effect="fade" time="1000" delay="0" condition="Container(300).HasFocus(6)">Conditional</animation>
+			<animation effect="fade" time="1000" delay="0">WindowOpen</animation>		
+			<animation effect="slide" start="0" end="-1980" tween="cubic" easing="inout" time="1000" >WindowClose</animation>
+		</control>
+		
+		<control type="image">
+			<width>1280</width>
+			<height>200</height>
+			<posx>800</posx>
+			<posy>910</posy>
+			<texture>colors/home-shadow.png</texture>
+		</control>
+	  
+		 <control type="panel" id="300">
+			 <description>Home Menu</description>
+				<posx>1000</posx>
+				<!--posy>160</posy-->
+				<posy>200</posy>
+				<width>950</width>
+				<height>750</height>
+				<!--onleft>8001</onleft-->
+				<onleft condition="Container(300).Hasfocus(1)">8001</onleft> 
+				<onleft condition="Container(300).Hasfocus(4)">8002</onleft>
+				<onleft condition="Container(300).Hasfocus(7)">8003</onleft>
+				<onright>50</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<scrolltime>200</scrolltime>
+				<itemlayout width="300" height="250">
+				
+					<control type="image">
+						<width>285</width>
+						<height>235</height>
+						<posx>0</posx>
+						<posy>0</posy>
+						<texture>colors/black_back.png</texture>
+					</control>
+					<control type="image">
+						<width>285</width>
+						<height>235</height>
+						<posx>0</posx>
+						<posy>0</posy>
+						<texture>colors/color_green.png</texture>
+					</control>
+					<control type="image">
+						<width>285</width>
+						<height>235</height>
+						<posx>0</posx>
+						<posy>0</posy>
+						<texture>colors/frame.png</texture>
+					</control>
+					<control type="image">
+						<width>150</width>
+						<height>150</height>
+						<posx>75</posx>
+						<posy>50</posy>
+						<aligny>center</aligny>
+						<align>center</align>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+
+
+				</itemlayout>
+				<focusedlayout width="300" height="250">
+				
+					<control type="image">
+						<width>285</width>
+						<height>235</height>
+						<posx>0</posx>
+						<posy>0</posy>
+						<texture>colors/black_back.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>285</width>
+						<height>235</height>
+						<texture>colors/color_grey.png</texture>
+					</control>
+					<control type="image">
+						<width>285</width>
+						<height>235</height>
+						<posx>0</posx>
+						<posy>0</posy>
+						<texture>colors/frame.png</texture>
+					</control>
+
+					
+					<control type="label">
+						<posx>20</posx>
+						<posy>180</posy>
+						<width>205</width>
+						<height>40</height>
+						<font>Medium</font>
+						<aligny>top</aligny>
+						<align>left</align>
+						<textcolor>White</textcolor>
+						<shadowcolor>ff333333</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+					<control type="label">
+						<posx>270</posx>
+						<posy>15</posy>
+						<width>245</width>
+						<height>40</height>
+						<font>Medium</font>
+						<aligny>top</aligny>
+						<align>right</align>
+						<textcolor>White</textcolor>
+						<shadowcolor>ff333333</shadowcolor>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+
+				</focusedlayout>
+				
+				<content>			  
+			  		<item id="1">
+						<description>Filme</description>
+						<label>Movies</label>
+						<label2>$INFO[Window.Property(Movies.Count)]</label2>
+						<thumb>home/home_movie.png</thumb>
+						<onclick>ActivateWindow(Video,movietitles,return)</onclick>
+						<visible>Library.HasContent(Movies)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoMoviesButton)</visible>
+					</item>
+									
+					<item id="2">
+						<description>Live-TV</description>
+						<label>Live-TV</label>
+						<onclick>ActivateWindow(MyPVR)</onclick>
+						<thumb>home/home_live-tv1.png</thumb>
+					</item>
+					
+					<item id="3">
+						<label>Bilder</label>
+						<thumb>home/home_pictures.png</thumb>
+						<onclick>ActivateWindow(MyPicturesSettings)</onclick>
+					</item>
+					
+					<item id="4">
+						<label>TV-Serien</label>
+						<thumb>home/home_tvshow.png</thumb>
+						<label2>$INFO[Window.Property(TVShows.Count)]</label2>
+						<onclick>ActivateWindow(Video,tvshowtitles)</onclick>
+						<visible>Library.HasContent(TVShows)</visible>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowsButton)</visible>
+					</item>
+					
+					<item id="5">
+						<label>Wetter</label>
+						<label>31010</label>
+						<thumb>home/home_weather.png</thumb>
+						<label2>$INFO[Weather.Conditions] : $INFO[Weather.Temperature]</label2>
+						<onclick>ActivateWindow(weather)</onclick>
+					</item>
+					
+					<item id="6">
+						<description>Favourites</description>
+						<label>31008</label>
+						<onclick>ActivateWindow(Favourites)</onclick>
+						<thumb>home/home_favourites.png</thumb>
+					</item>
+					
+					<item id="7">
+						<description>Music</description>
+						<label>Musik</label>
+						<onclick>ActivateWindow(music)</onclick>
+						<thumb>home/home_music.png</thumb>
+						<label2>$INFO[Window.Property(Music.AlbumsCount)]</label2>
+					</item>
+					
+					<item id="8">
+						<description>Settings</description>
+						<label>31012</label>
+						<onclick>ActivateWindow(settings)</onclick>
+						<thumb>home/home_settings.png</thumb>
+					</item>
+					
+					<item id="9">
+						<description>Shutdown</description>
+						<label>31013</label>
+						<onclick>ActivateWindow(shutdownmenu)</onclick>
+						<thumb>home/home_shutdown.png</thumb>
+					</item>
+
+				
+					<item id="10">						
+						<label>Videos</label>	
+						<thumb>home/home_videos.png</thumb>
+						<onclick>ActivateWindow(Video,root)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					</item>
+
+					<item id="11">
+						<description>Programs</description>
+						<label>31002</label>
+						<onclick>ActivateWindow(Programs,Addons)</onclick>
+						<thumb>home/home_addons.png</thumb>
+					</item>
+					<item id="12">
+						<description>File manager</description>
+						<label>31011</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<thumb>home/home_filemanager.png</thumb>
+					</item>					
+					<item id="13">
+						<description>Play Disc</description>
+						<label>31014</label>
+						<onclick>PlayDVD</onclick>
+						<visible>System.HasMediadvd</visible>
+					</item>	
+
+			</content>
+		</control>
+		
+		<!--Home Recently Addes-->
+			<include>HomeWidget</include>
+		<!--Home Sub Menu-->
+			<include>HomeSubMenu</include>			
+		
+		<!--RSS-->	
+		<control type="group">
+			<include>animation_fade</include>
+			<include>animation_hover_slide</include>
+			<!--control type="image">	
+				<posx>0</posx>
+				<posy>758</posy>
+				<width>1865</width>
+				<height>96</height>
+				<texture>basichome_rss_bg.png</texture>				
+			</control-->	
+			<control type="rss">	<!--RSS Text-->
+				<description>RSS Feed</description>
+				<posx>0</posx>
+				<posy>803</posy>
+				<width>1840</width>
+				<height>50</height>
+				<font>RISELight35</font>
+				<urlset>1</urlset>
+				<titlecolor>MainBlue</titlecolor>
+				<headlinecolor>MainBlue</headlinecolor>
+				<textcolor>MainBlue</textcolor>
+				<scrollspeed>40</scrollspeed>					
+			</control>	
+		</control>	
+	</controls>
+</window>

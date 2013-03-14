@@ -1,0 +1,77 @@
+<!-- RISE -->
+<window id="147">
+	<defaultcontrol>61</defaultcontrol>
+
+	<controls>	
+
+		<control type="group">
+			<posx>200</posx>
+			<posy>34</posy>
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Image												-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1580</width>
+				<height>915</height>
+				<texture>dialog_background_big_dark.png</texture>
+			</control>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Label												-->
+	<!-------------------------------------------------------------------------------------------->
+			
+			<control type="label" id="1">
+				<description>header label</description>
+				<posx>250</posx>
+				<posy>120</posy>
+				<width>1000</width>
+				<height>45</height>
+				<textcolor>MainBlue</textcolor>	
+				<font>RISELight45</font>
+			</control>
+
+			<control type="textbox" id="5">
+				<description>textarea</description>
+				<posx>250</posx>
+				<posy>220</posy>
+				<width>1000</width>
+				<height>500</height>
+				<align>justify</align>
+			</control>
+			
+			
+			<control type="scrollbar" id="61">
+				<posx>1410</posx>
+				<posy>220</posy>
+				<width>8</width>
+				<height>500</height>
+				<texturesliderbackground></texturesliderbackground>
+				<texturesliderbar></texturesliderbar>
+				<texturesliderbarfocus></texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<onleft>Close</onleft>
+				<onright>Close</onright>
+				<ondown>61</ondown>
+				<onup>61</onup>
+			</control>
+			
+
+		</control>
+
+	</controls>
+
+</window>

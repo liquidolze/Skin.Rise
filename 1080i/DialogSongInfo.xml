@@ -1,0 +1,296 @@
+<!--RISE-->
+<window id="135">
+	<defaultcontrol always="true">9000</defaultcontrol> <!--14-->
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>		
+
+		<control type="group">
+			<visible>!Window.IsActive(musicinformation)</visible>
+			<visible>!Window.IsActive(filebrowser)</visible>		
+			<posx>200</posx>
+			<posy>34</posy>
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>			
+			
+			<animation type="Visible">
+                <effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+            </animation>			
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Image												-->
+	<!-------------------------------------------------------------------------------------------->
+
+	
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1580</width>
+				<height>915</height>
+				<texture>dialog_info.png</texture>
+			</control>
+			
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Icon												-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<control type="image" id="3">
+				<posx>180</posx>
+				<posy>120</posy>
+				<width>300</width>
+				<height>300</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio>stretch</aspectratio>					
+				<bordersize>8</bordersize>
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Title													-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<control type="textbox" id="4">
+				<description>Review</description>
+				<posx>600</posx>
+				<posy>445</posy>
+				<width>800</width>
+				<height>270</height>
+				<align>justify</align>
+				<font>RISELight32</font>
+				<align>justify</align>
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Info Album, Genre, Year, ...								-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<control type="grouplist">
+				<posx>600</posx>
+				<posy>230</posy>
+				<width>800</width>
+				<height>210</height>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+
+				<control type="label">
+					<description>Album</description>
+					<width>870</width>
+					<height>42</height>
+					<label>$INFO[ListItem.Album,[COLOR MainBlue]$LOCALIZE[558]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Album)</visible>
+				</control>
+
+				<control type="label">
+					<description>Artist</description>
+					<width>870</width>
+					<height>42</height>
+					<label>$INFO[ListItem.Artist,[COLOR MainBlue]$LOCALIZE[557]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Artist)</visible>
+				</control>
+
+				<control type="label">
+					<description>Genre</description>
+					<width>870</width>
+					<height>42</height>
+					<label>$INFO[ListItem.Genre,[COLOR MainBlue]$LOCALIZE[515]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Genre)</visible>
+				</control>
+
+				<control type="label">
+					<description>Year</description>
+					<width>870</width>
+					<height>42</height>
+					<label>$INFO[ListItem.Year,[COLOR MainBlue]$LOCALIZE[562]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Year)</visible>
+				</control>
+
+			</control>
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Rating												-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<!--
+			<control type="grouplist">
+				<posx>435</posx>
+				<posy>285</posy>
+				<itemgap>15</itemgap>
+				<orientation>horizontal</orientation>	
+
+				<control type="label">
+					<description>Rating Title</description>
+					<width min="0" max="300">auto</width>
+					<textcolor>blue</textcolor>
+					<label>$LOCALIZE[563]:</label>
+				</control>
+
+				<control type="image">
+					<description>Rating value</description>
+					<width>180</width>
+					<height>75</height>
+					<texture>other_textures/LeftRating/$INFO[ListItem.StarRating]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+			</control>
+			-->
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Textbox												-->
+	<!-------------------------------------------------------------------------------------------->		
+	
+	
+			<control type="textbox" id="4">
+				<description>Review</description>
+				<posx>600</posx>
+				<posy>480</posy>
+				<width>800</width>
+				<height>270</height>
+				<align>justify</align>
+				<label fallback="161">$INFO[ListItem.Comment]</label>
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Rating Spincontrolex								-->
+	<!-------------------------------------------------------------------------------------------->	
+
+			<!--
+			
+			<control type="image">
+				<posx>15</posx>
+				<posy>480</posy>
+				<width>383</width>
+				<height>66</height>				
+				<texture border="5">other_textures/ButtonFo.png</texture>
+				<visible>!ControlGroup(9000).HasFocus</visible>
+			</control>
+
+			<control type="image">
+				<posx>15</posx>
+				<posy>480</posy>
+				<width>383</width>
+				<height>66</height>				
+				<texture border="2">other_textures/ButtonNF.png</texture>
+				<visible>ControlGroup(9000).HasFocus</visible>
+			</control>
+
+			<control type="label">
+				<posx>45</posx>
+				<posy>480</posy>
+				<width>353</width>
+				<label>33067</label>
+			</control>	
+			
+			<control type="button" id="14">
+				<description>Decrease Rating</description>
+				<posx>270</posx>
+				<posy>498</posy>
+				<width>50</width>
+				<height>33</height>
+				<onclick>DecreaseRating</onclick>
+				<texturenofocus>other_textures/scroll-down-2.png</texturenofocus>
+				<texturefocus>other_textures/scroll-down-focus-2.png</texturefocus>
+				<onleft>15</onleft>
+				<onright>15</onright>
+				<onup>13</onup>
+				<ondown>10</ondown>
+			</control>
+
+			<control type="button" id="15">
+				<description>Increase Rating</description>
+				<posx>320</posx>
+				<posy>498</posy>
+				<width>50</width>
+				<height>33</height>
+				<onclick>IncreaseRating</onclick>
+				<texturenofocus>other_textures/scroll-up-2.png</texturenofocus>
+				<texturefocus>other_textures/scroll-up-focus-2.png</texturefocus>
+				<onleft>14</onleft>
+				<onright>14</onright>
+				<onup>13</onup>
+				<ondown>10</ondown>
+			</control>
+			-->
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Buttons												-->
+	<!-------------------------------------------------------------------------------------------->		
+
+			
+			<control type="grouplist" id="9000">
+				<posx>91</posx>
+				<posy>450</posy>
+				<width>460</width>
+				<height>340</height>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<itemgap>3</itemgap>
+				<orientation>vertical</orientation>
+				
+				<!--Hidden OK Button-->
+				<control type="button" id ="10">
+					<description>Ok button</description>					
+					<width>0</width>								
+					<label></label>
+					<texturefocus></texturefocus>
+				</control>			
+				
+				<!--
+				<control type="button" id ="10">
+					<description>Ok button</description>
+					<align>left</align>
+					<textoffsetx>150</textoffsetx>
+					<width>500</width>								
+					<label>186</label>					
+				</control>				
+			
+				<control type="button" id="11">
+					<description>Cancel button</description>
+					<align>left</align>
+					<textoffsetx>150</textoffsetx>
+					<width>500</width>								
+					<label>222</label>
+				</control>				
+				
+				<control type="button" id="12">
+					<description>Album Info button</description>
+					<align>left</align>
+					<textoffsetx>150</textoffsetx>
+					<width>500</width>								
+					<label>10523</label>
+				</control>
+
+				<control type="button" id ="13">
+					<description>Get Thumb button</description>
+					<align>left</align>
+					<textoffsetx>150</textoffsetx>
+					<width>500</width>								
+					<label>13405</label>
+				</control>
+				-->	
+				
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

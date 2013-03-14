@@ -1,0 +1,87 @@
+VidoeOSDBookmarks 			=lesezeichen
+MusicVisualisierung.xml		=Visualisierung
+Settings.xml				=Gegister Dienste einfügen
+
+<!-------------------------------------------------------------------------------------------->
+<!--									Erledigt:											-->
+<!-------------------------------------------------------------------------------------------->
+
+SkinSettings				=Ersetzt CustomSettings.xml Windows ID wird gelöscht wird nicht mer gebraucht<!--erledigt-->
+
+DialogExtendedProgressBar	=Ersetzt DialogVideoScan.xml DioalogMusicScan.xml <!--erledigt-->
+Common_Clock				=<!--V2 mit Tag, Datum, Monat, Temperatur und visible Weather.IsFetched slide-->
+
+SmartPlaylistEditor			=<!--erledigt,V2 wie filebrowser-->
+SmartPlaylistRule			=<!--erledigt-->
+
+MyMusicPlaylistEditor		=<!--erledigt-->
+
+
+VideoOverlay				=Filminfos von Now Playing <!--deaktiviert-->
+MusicOSD					<!--erledigt-->
+MusicOverlay				=Startet MusicOSD´<!--erledigt-->
+
+DialogVideoInfo				<!--V2 erledigt-->
+IncludeHomeRecentlyAdded	<!--neue Animaton-->
+Settings.xml
+SettingsCategory.xml
+SettingsSystemInfo.xml
+CustomSettings.xml			<!--gelöscht-->
+
+DialogContentSettings		=Scraperauswahl
+DialogFavourites			=Slide Menü Favortiten
+DialogMuteBug				=Position i.O.
+
+DialogMediaSoure			=Videos Hinzufügen <!--Menüführung optimiert-->
+DialogBusy					=Beschäftigt
+DialogVolumeBar				=Volume Anzeige		<!--V2 nur mit volume-bar-mid.png und border=8-->						
+
+VideoOverlay				=Es wird gesielt <!--Im Fanart Home Menü-->
+MusicOverlay				=Es wird gesielt (deaktiviert)
+DialogSlider 				=Ausrichten, Helligkeit... Slider)
+
+
+DialogContexMenu			=Von Anfang starten (Als Side-Menu) / Datenbank aktualisieren, als gesehen markieren...
+DialogKeybord				=Keybord <!-- +Dim -->
+
+
+DialogKaiToast				=hello world <!--erledigt +Dim-->
+DialogProgress 				=lade ordner <!--erledigt +Skin.HasSetting(youtube)-->
+
+DialogVideoScan				=prov <!--erledigt-->
+DialogMusicScan				=prov <!--erledigt-->
+
+DialogOK					=Button eventuell rot oder grün <!--erledigt +Dim-->
+PlayerControl				=(quicknav "m") <!--deaktiviert-->
+DialogButtonMenu			=Shutdownmenu <!--erledigt +Dim-->
+
+DialogAddonSetting			=AddonSetting <!--erledigt + X-Position geordnet-->
+DialogAddonInfo				=Addoninfo <!--erledigt-->
+DialogTextViewer			=Addon Änderungtext <!--erledigt-->
+
+DialogYesNo					=Dialog Ja/Nein	<!--erledigt +Dim-->
+
+DialogAlbumInfo				<!--erledigt-->
+DialogSongInfo				<!--erledigt-->
+
+FileBrowser					<!--erledigt-->
+
+
+DialogSelect				=Schauspieler andere Filme <!-- ID6 deaktiviert-->
+							=Anderen Skin auswählen
+						
+FileManager					=Filemanager	
+
+
+
+VideoOSD 					=Player			<!--gleich-->	<!--hier sind zusätzlich Buttons und <texture>osd/osd_panel_button.png</texture> -->
+															<!--14.06.2012 Button sind größer <texture>osd/osd_panel.png</texture> -->
+															<!--Animation und Buttons hinzugefügt-->
+DialogSeekbar 				=Pause			<!--gleich-->
+											<!--Animation hinzugefügt-->
+DialogFullScreenInfo		=Info Video		<!--gleich-->	
+											<!--Animation hinzugefügt-->
+
+
+VideoOSDSettings 			=Einstellungen <!--Animation hinzugefügt-->
+	

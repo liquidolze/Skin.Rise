@@ -1,0 +1,349 @@
+<includes>
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Include Rating Movie										-->
+	<!-------------------------------------------------------------------------------------------->			
+	
+		<include name="RatingMovie">
+		
+			<control type="image">					
+				<include>StarRatingMovie.0</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.1</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.2</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.3</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.4</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.5</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.6</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.7</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.8</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.9</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingMovie.10</include>									
+			</control>
+			
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							RatingPos													-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="RatingPos">	
+			<posx>270</posx>
+			<posy>922</posy>
+			<width>120</width>
+			<height>20</height>				
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Rating Fallback	0-10 from Container 8001					-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="StarRatingMovie.0">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),0) | SubString(Container(8001).ListItem.Property(ItemRating),0.1) | SubString(Container(8001).ListItem.Property(ItemRating),0.2) | SubString(Container(8001).ListItem.Property(ItemRating),0.3) | SubString(Container(8001).ListItem.Property(ItemRating),0.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/0.png</texture>
+		</include>
+		<include name="StarRatingMovie.1">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),0.5) | SubString(Container(8001).ListItem.Property(ItemRating),0.6) | SubString(Container(8001).ListItem.Property(ItemRating),0.7) | SubString(Container(8001).ListItem.Property(ItemRating),0.8) | SubString(Container(8001).ListItem.Property(ItemRating),0.9) | SubString(Container(8001).ListItem.Property(ItemRating),1)| SubString(Container(8001).ListItem.Property(ItemRating),1.1) | SubString(Container(8001).ListItem.Property(ItemRating),1.2) | SubString(Container(8001).ListItem.Property(ItemRating),1.3) | SubString(Container(8001).ListItem.Property(ItemRating),1.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/1.png</texture>
+		</include>
+		<include name="StarRatingMovie.2">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),1.5) | SubString(Container(8001).ListItem.Property(ItemRating),1.6) | SubString(Container(8001).ListItem.Property(ItemRating),1.7) | SubString(Container(8001).ListItem.Property(ItemRating),1.8) | SubString(Container(8001).ListItem.Property(ItemRating),1.9) | SubString(Container(8001).ListItem.Property(ItemRating),2) | SubString(Container(8001).ListItem.Property(ItemRating),2.1) | SubString(Container(8001).ListItem.Property(ItemRating),2.2) | SubString(Container(8001).ListItem.Property(ItemRating),2.3) | SubString(Container(8001).ListItem.Property(ItemRating),2.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/2.png</texture>
+		</include>
+		<include name="StarRatingMovie.3">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),2.5) | SubString(Container(8001).ListItem.Property(ItemRating),2.6) | SubString(Container(8001).ListItem.Property(ItemRating),2.7) | SubString(Container(8001).ListItem.Property(ItemRating),2.8) | SubString(Container(8001).ListItem.Property(ItemRating),2.9) | SubString(Container(8001).ListItem.Property(ItemRating),3) | SubString(Container(8001).ListItem.Property(ItemRating),3.1) | SubString(Container(8001).ListItem.Property(ItemRating),3.2) | SubString(Container(8001).ListItem.Property(ItemRating),3.3) | SubString(Container(8001).ListItem.Property(ItemRating),3.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/3.png</texture>		
+		</include>		
+		<include name="StarRatingMovie.4">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),3.5) | SubString(Container(8001).ListItem.Property(ItemRating),3.6) | SubString(Container(8001).ListItem.Property(ItemRating),3.7) | SubString(Container(8001).ListItem.Property(ItemRating),3.8) | SubString(Container(8001).ListItem.Property(ItemRating),3.9) | SubString(Container(8001).ListItem.Property(ItemRating),4) | SubString(Container(8001).ListItem.Property(ItemRating),4.1) | SubString(Container(8001).ListItem.Property(ItemRating),4.2) | SubString(Container(8001).ListItem.Property(ItemRating),4.3) | SubString(Container(8001).ListItem.Property(ItemRating),4.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/4.png</texture>
+		</include>	
+		<include name="StarRatingMovie.5">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),4.5) | SubString(Container(8001).ListItem.Property(ItemRating),4.6) | SubString(Container(8001).ListItem.Property(ItemRating),4.7) | SubString(Container(8001).ListItem.Property(ItemRating),4.8) | SubString(Container(8001).ListItem.Property(ItemRating),4.9) | SubString(Container(8001).ListItem.Property(ItemRating),5) | SubString(Container(8001).ListItem.Property(ItemRating),5.1) | SubString(Container(8001).ListItem.Property(ItemRating),5.2) | SubString(Container(8001).ListItem.Property(ItemRating),5.3) | SubString(Container(8001).ListItem.Property(ItemRating),5.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/5.png</texture>
+		</include>	
+		<include name="StarRatingMovie.6">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),5.5) | SubString(Container(8001).ListItem.Property(ItemRating),5.6) | SubString(Container(8001).ListItem.Property(ItemRating),5.7) | SubString(Container(8001).ListItem.Property(ItemRating),5.8) | SubString(Container(8001).ListItem.Property(ItemRating),5.9) | SubString(Container(8001).ListItem.Property(ItemRating),6) | SubString(Container(8001).ListItem.Property(ItemRating),6.1) | SubString(Container(8001).ListItem.Property(ItemRating),6.2) | SubString(Container(8001).ListItem.Property(ItemRating),6.3) | SubString(Container(8001).ListItem.Property(ItemRating),6.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/6.png</texture>
+		</include>		
+		<include name="StarRatingMovie.7">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),6.5) | SubString(Container(8001).ListItem.Property(ItemRating),6.6) | SubString(Container(8001).ListItem.Property(ItemRating),6.7) | SubString(Container(8001).ListItem.Property(ItemRating),6.8) | SubString(Container(8001).ListItem.Property(ItemRating),6.9) | SubString(Container(8001).ListItem.Property(ItemRating),7) | SubString(Container(8001).ListItem.Property(ItemRating),7.1) | SubString(Container(8001).ListItem.Property(ItemRating),7.2) | SubString(Container(8001).ListItem.Property(ItemRating),7.3) | SubString(Container(8001).ListItem.Property(ItemRating),7.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/7.png</texture>
+		</include>		
+		<include name="StarRatingMovie.8">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),7.5) | SubString(Container(8001).ListItem.Property(ItemRating),7.6) | SubString(Container(8001).ListItem.Property(ItemRating),7.7) | SubString(Container(8001).ListItem.Property(ItemRating),7.8) | SubString(Container(8001).ListItem.Property(ItemRating),7.9) | SubString(Container(8001).ListItem.Property(ItemRating),8) | SubString(Container(8001).ListItem.Property(ItemRating),8.1) | SubString(Container(8001).ListItem.Property(ItemRating),8.2) | SubString(Container(8001).ListItem.Property(ItemRating),8.3) | SubString(Container(8001).ListItem.Property(ItemRating),8.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/8.png</texture>
+		</include>		
+		<include name="StarRatingMovie.9">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),8.5) | SubString(Container(8001).ListItem.Property(ItemRating),8.6) | SubString(Container(8001).ListItem.Property(ItemRating),8.7) | SubString(Container(8001).ListItem.Property(ItemRating),8.8) | SubString(Container(8001).ListItem.Property(ItemRating),8.9) | SubString(Container(8001).ListItem.Property(ItemRating),9) | SubString(Container(8001).ListItem.Property(ItemRating),9.1) | SubString(Container(8001).ListItem.Property(ItemRating),9.2) | SubString(Container(8001).ListItem.Property(ItemRating),9.3) | SubString(Container(8001).ListItem.Property(ItemRating),9.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/9.png</texture>
+		</include>		
+		<include name="StarRatingMovie.10">
+			<include>RatingPos</include>	
+			<visible>SubString(Container(8001).ListItem.Property(ItemRating),9.5) | SubString(Container(8001).ListItem.Property(ItemRating),9.6) | SubString(Container(8001).ListItem.Property(ItemRating),9.7) | SubString(Container(8001).ListItem.Property(ItemRating),9.8) | SubString(Container(8001).ListItem.Property(ItemRating),9.9) | SubString(Container(8001).ListItem.Property(ItemRating),10)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/10.png</texture>
+		</include>		
+		
+		
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Include Rating Episode										-->
+	<!-------------------------------------------------------------------------------------------->			
+	
+		<include name="RatingEpisode">
+		
+			<control type="image">					
+				<include>StarRatingEpisode.0</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.1</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.2</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.3</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.4</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.5</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.6</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.7</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.8</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.9</include>
+			</control>
+			<control type="image">		
+				<include>StarRatingEpisode.10</include>									
+			</control>
+			
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							RatingPos Episode											-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="RatingPosEpisode">	
+			<posx>220</posx>
+			<posy>516</posy>
+			<width>120</width>
+			<height>20</height>			
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Rating Fallback	0-10 from Container 8002					-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="StarRatingEpisode.0">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),0) | SubString(Container(8002).ListItem.Property(ItemRating),0.1) | SubString(Container(8002).ListItem.Property(ItemRating),0.2) | SubString(Container(8002).ListItem.Property(ItemRating),0.3) | SubString(Container(8002).ListItem.Property(ItemRating),0.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/0.png</texture>
+		</include>
+		<include name="StarRatingEpisode.1">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),0.5) | SubString(Container(8002).ListItem.Property(ItemRating),0.6) | SubString(Container(8002).ListItem.Property(ItemRating),0.7) | SubString(Container(8002).ListItem.Property(ItemRating),0.8) | SubString(Container(8002).ListItem.Property(ItemRating),0.9) | SubString(Container(8002).ListItem.Property(ItemRating),1)| SubString(Container(8002).ListItem.Property(ItemRating),1.1) | SubString(Container(8002).ListItem.Property(ItemRating),1.2) | SubString(Container(8002).ListItem.Property(ItemRating),1.3) | SubString(Container(8002).ListItem.Property(ItemRating),1.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/1.png</texture>
+		</include>
+		<include name="StarRatingEpisode.2">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),1.5) | SubString(Container(8002).ListItem.Property(ItemRating),1.6) | SubString(Container(8002).ListItem.Property(ItemRating),1.7) | SubString(Container(8002).ListItem.Property(ItemRating),1.8) | SubString(Container(8002).ListItem.Property(ItemRating),1.9) | SubString(Container(8002).ListItem.Property(ItemRating),2) | SubString(Container(8002).ListItem.Property(ItemRating),2.1) | SubString(Container(8002).ListItem.Property(ItemRating),2.2) | SubString(Container(8002).ListItem.Property(ItemRating),2.3) | SubString(Container(8002).ListItem.Property(ItemRating),2.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/2.png</texture>
+		</include>
+		<include name="StarRatingEpisode.3">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),2.5) | SubString(Container(8002).ListItem.Property(ItemRating),2.6) | SubString(Container(8002).ListItem.Property(ItemRating),2.7) | SubString(Container(8002).ListItem.Property(ItemRating),2.8) | SubString(Container(8002).ListItem.Property(ItemRating),2.9) | SubString(Container(8002).ListItem.Property(ItemRating),3) | SubString(Container(8002).ListItem.Property(ItemRating),3.1) | SubString(Container(8002).ListItem.Property(ItemRating),3.2) | SubString(Container(8002).ListItem.Property(ItemRating),3.3) | SubString(Container(8002).ListItem.Property(ItemRating),3.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/3.png</texture>		
+		</include>		
+		<include name="StarRatingEpisode.4">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),3.5) | SubString(Container(8002).ListItem.Property(ItemRating),3.6) | SubString(Container(8002).ListItem.Property(ItemRating),3.7) | SubString(Container(8002).ListItem.Property(ItemRating),3.8) | SubString(Container(8002).ListItem.Property(ItemRating),3.9) | SubString(Container(8002).ListItem.Property(ItemRating),4) | SubString(Container(8002).ListItem.Property(ItemRating),4.1) | SubString(Container(8002).ListItem.Property(ItemRating),4.2) | SubString(Container(8002).ListItem.Property(ItemRating),4.3) | SubString(Container(8002).ListItem.Property(ItemRating),4.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/4.png</texture>
+		</include>	
+		<include name="StarRatingEpisode.5">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),4.5) | SubString(Container(8002).ListItem.Property(ItemRating),4.6) | SubString(Container(8002).ListItem.Property(ItemRating),4.7) | SubString(Container(8002).ListItem.Property(ItemRating),4.8) | SubString(Container(8002).ListItem.Property(ItemRating),4.9) | SubString(Container(8002).ListItem.Property(ItemRating),5) | SubString(Container(8002).ListItem.Property(ItemRating),5.1) | SubString(Container(8002).ListItem.Property(ItemRating),5.2) | SubString(Container(8002).ListItem.Property(ItemRating),5.3) | SubString(Container(8002).ListItem.Property(ItemRating),5.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/5.png</texture>
+		</include>	
+		<include name="StarRatingEpisode.6">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),5.5) | SubString(Container(8002).ListItem.Property(ItemRating),5.6) | SubString(Container(8002).ListItem.Property(ItemRating),5.7) | SubString(Container(8002).ListItem.Property(ItemRating),5.8) | SubString(Container(8002).ListItem.Property(ItemRating),5.9) | SubString(Container(8002).ListItem.Property(ItemRating),6) | SubString(Container(8002).ListItem.Property(ItemRating),6.1) | SubString(Container(8002).ListItem.Property(ItemRating),6.2) | SubString(Container(8002).ListItem.Property(ItemRating),6.3) | SubString(Container(8002).ListItem.Property(ItemRating),6.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/6.png</texture>
+		</include>		
+		<include name="StarRatingEpisode.7">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),6.5) | SubString(Container(8002).ListItem.Property(ItemRating),6.6) | SubString(Container(8002).ListItem.Property(ItemRating),6.7) | SubString(Container(8002).ListItem.Property(ItemRating),6.8) | SubString(Container(8002).ListItem.Property(ItemRating),6.9) | SubString(Container(8002).ListItem.Property(ItemRating),7) | SubString(Container(8002).ListItem.Property(ItemRating),7.1) | SubString(Container(8002).ListItem.Property(ItemRating),7.2) | SubString(Container(8002).ListItem.Property(ItemRating),7.3) | SubString(Container(8002).ListItem.Property(ItemRating),7.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/7.png</texture>
+		</include>		
+		<include name="StarRatingEpisode.8">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),7.5) | SubString(Container(8002).ListItem.Property(ItemRating),7.6) | SubString(Container(8002).ListItem.Property(ItemRating),7.7) | SubString(Container(8002).ListItem.Property(ItemRating),7.8) | SubString(Container(8002).ListItem.Property(ItemRating),7.9) | SubString(Container(8002).ListItem.Property(ItemRating),8) | SubString(Container(8002).ListItem.Property(ItemRating),8.1) | SubString(Container(8002).ListItem.Property(ItemRating),8.2) | SubString(Container(8002).ListItem.Property(ItemRating),8.3) | SubString(Container(8002).ListItem.Property(ItemRating),8.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/8.png</texture>
+		</include>		
+		<include name="StarRatingEpisode.9">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),8.5) | SubString(Container(8002).ListItem.Property(ItemRating),8.6) | SubString(Container(8002).ListItem.Property(ItemRating),8.7) | SubString(Container(8002).ListItem.Property(ItemRating),8.8) | SubString(Container(8002).ListItem.Property(ItemRating),8.9) | SubString(Container(8002).ListItem.Property(ItemRating),9) | SubString(Container(8002).ListItem.Property(ItemRating),9.1) | SubString(Container(8002).ListItem.Property(ItemRating),9.2) | SubString(Container(8002).ListItem.Property(ItemRating),9.3) | SubString(Container(8002).ListItem.Property(ItemRating),9.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/9.png</texture>
+		</include>		
+		<include name="StarRatingEpisode.10">
+			<include>RatingPosEpisode</include>	
+			<visible>SubString(Container(8002).ListItem.Property(ItemRating),9.5) | SubString(Container(8002).ListItem.Property(ItemRating),9.6) | SubString(Container(8002).ListItem.Property(ItemRating),9.7) | SubString(Container(8002).ListItem.Property(ItemRating),9.8) | SubString(Container(8002).ListItem.Property(ItemRating),9.9) | SubString(Container(8002).ListItem.Property(ItemRating),10)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/10.png</texture>
+		</include>	
+
+		
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Include Random Movie										-->
+	<!-------------------------------------------------------------------------------------------->			
+	
+		<include name="RatingRandom">
+		
+			<control type="image">					
+				<include>StarRandomMovie.0</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.1</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.2</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.3</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.4</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.5</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.6</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.7</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.8</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.9</include>
+			</control>
+			<control type="image">		
+				<include>StarRandomMovie.10</include>									
+			</control>
+			
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							RatingRandomPos													-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="RatingRandomPos">	
+			<posx>0</posx>
+			<posy>510</posy>
+			<width>120</width>
+			<height>20</height>				
+		</include>	
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Rating Fallback	0-10 from Container 8004					-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<include name="StarRandomMovie.0">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),0) | SubString(Container(8004).ListItem.Property(ItemRating),0.1) | SubString(Container(8004).ListItem.Property(ItemRating),0.2) | SubString(Container(8004).ListItem.Property(ItemRating),0.3) | SubString(Container(8004).ListItem.Property(ItemRating),0.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/0.png</texture>
+		</include>
+		<include name="StarRandomMovie.1">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),0.5) | SubString(Container(8004).ListItem.Property(ItemRating),0.6) | SubString(Container(8004).ListItem.Property(ItemRating),0.7) | SubString(Container(8004).ListItem.Property(ItemRating),0.8) | SubString(Container(8004).ListItem.Property(ItemRating),0.9) | SubString(Container(8004).ListItem.Property(ItemRating),1)| SubString(Container(8004).ListItem.Property(ItemRating),1.1) | SubString(Container(8004).ListItem.Property(ItemRating),1.2) | SubString(Container(8004).ListItem.Property(ItemRating),1.3) | SubString(Container(8004).ListItem.Property(ItemRating),1.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/1.png</texture>
+		</include>
+		<include name="StarRandomMovie.2">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),1.5) | SubString(Container(8004).ListItem.Property(ItemRating),1.6) | SubString(Container(8004).ListItem.Property(ItemRating),1.7) | SubString(Container(8004).ListItem.Property(ItemRating),1.8) | SubString(Container(8004).ListItem.Property(ItemRating),1.9) | SubString(Container(8004).ListItem.Property(ItemRating),2) | SubString(Container(8004).ListItem.Property(ItemRating),2.1) | SubString(Container(8004).ListItem.Property(ItemRating),2.2) | SubString(Container(8004).ListItem.Property(ItemRating),2.3) | SubString(Container(8004).ListItem.Property(ItemRating),2.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/2.png</texture>
+		</include>
+		<include name="StarRandomMovie.3">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),2.5) | SubString(Container(8004).ListItem.Property(ItemRating),2.6) | SubString(Container(8004).ListItem.Property(ItemRating),2.7) | SubString(Container(8004).ListItem.Property(ItemRating),2.8) | SubString(Container(8004).ListItem.Property(ItemRating),2.9) | SubString(Container(8004).ListItem.Property(ItemRating),3) | SubString(Container(8004).ListItem.Property(ItemRating),3.1) | SubString(Container(8004).ListItem.Property(ItemRating),3.2) | SubString(Container(8004).ListItem.Property(ItemRating),3.3) | SubString(Container(8004).ListItem.Property(ItemRating),3.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/3.png</texture>		
+		</include>		
+		<include name="StarRandomMovie.4">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),3.5) | SubString(Container(8004).ListItem.Property(ItemRating),3.6) | SubString(Container(8004).ListItem.Property(ItemRating),3.7) | SubString(Container(8004).ListItem.Property(ItemRating),3.8) | SubString(Container(8004).ListItem.Property(ItemRating),3.9) | SubString(Container(8004).ListItem.Property(ItemRating),4) | SubString(Container(8004).ListItem.Property(ItemRating),4.1) | SubString(Container(8004).ListItem.Property(ItemRating),4.2) | SubString(Container(8004).ListItem.Property(ItemRating),4.3) | SubString(Container(8004).ListItem.Property(ItemRating),4.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/4.png</texture>
+		</include>	
+		<include name="StarRandomMovie.5">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),4.5) | SubString(Container(8004).ListItem.Property(ItemRating),4.6) | SubString(Container(8004).ListItem.Property(ItemRating),4.7) | SubString(Container(8004).ListItem.Property(ItemRating),4.8) | SubString(Container(8004).ListItem.Property(ItemRating),4.9) | SubString(Container(8004).ListItem.Property(ItemRating),5) | SubString(Container(8004).ListItem.Property(ItemRating),5.1) | SubString(Container(8004).ListItem.Property(ItemRating),5.2) | SubString(Container(8004).ListItem.Property(ItemRating),5.3) | SubString(Container(8004).ListItem.Property(ItemRating),5.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/5.png</texture>
+		</include>	
+		<include name="StarRandomMovie.6">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),5.5) | SubString(Container(8004).ListItem.Property(ItemRating),5.6) | SubString(Container(8004).ListItem.Property(ItemRating),5.7) | SubString(Container(8004).ListItem.Property(ItemRating),5.8) | SubString(Container(8004).ListItem.Property(ItemRating),5.9) | SubString(Container(8004).ListItem.Property(ItemRating),6) | SubString(Container(8004).ListItem.Property(ItemRating),6.1) | SubString(Container(8004).ListItem.Property(ItemRating),6.2) | SubString(Container(8004).ListItem.Property(ItemRating),6.3) | SubString(Container(8004).ListItem.Property(ItemRating),6.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/6.png</texture>
+		</include>		
+		<include name="StarRandomMovie.7">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),6.5) | SubString(Container(8004).ListItem.Property(ItemRating),6.6) | SubString(Container(8004).ListItem.Property(ItemRating),6.7) | SubString(Container(8004).ListItem.Property(ItemRating),6.8) | SubString(Container(8004).ListItem.Property(ItemRating),6.9) | SubString(Container(8004).ListItem.Property(ItemRating),7) | SubString(Container(8004).ListItem.Property(ItemRating),7.1) | SubString(Container(8004).ListItem.Property(ItemRating),7.2) | SubString(Container(8004).ListItem.Property(ItemRating),7.3) | SubString(Container(8004).ListItem.Property(ItemRating),7.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/7.png</texture>
+		</include>		
+		<include name="StarRandomMovie.8">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),7.5) | SubString(Container(8004).ListItem.Property(ItemRating),7.6) | SubString(Container(8004).ListItem.Property(ItemRating),7.7) | SubString(Container(8004).ListItem.Property(ItemRating),7.8) | SubString(Container(8004).ListItem.Property(ItemRating),7.9) | SubString(Container(8004).ListItem.Property(ItemRating),8) | SubString(Container(8004).ListItem.Property(ItemRating),8.1) | SubString(Container(8004).ListItem.Property(ItemRating),8.2) | SubString(Container(8004).ListItem.Property(ItemRating),8.3) | SubString(Container(8004).ListItem.Property(ItemRating),8.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/8.png</texture>
+		</include>		
+		<include name="StarRandomMovie.9">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),8.5) | SubString(Container(8004).ListItem.Property(ItemRating),8.6) | SubString(Container(8004).ListItem.Property(ItemRating),8.7) | SubString(Container(8004).ListItem.Property(ItemRating),8.8) | SubString(Container(8004).ListItem.Property(ItemRating),8.9) | SubString(Container(8004).ListItem.Property(ItemRating),9) | SubString(Container(8004).ListItem.Property(ItemRating),9.1) | SubString(Container(8004).ListItem.Property(ItemRating),9.2) | SubString(Container(8004).ListItem.Property(ItemRating),9.3) | SubString(Container(8004).ListItem.Property(ItemRating),9.4)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/9.png</texture>
+		</include>		
+		<include name="StarRandomMovie.10">
+			<include>RatingRandomPos</include>	
+			<visible>SubString(Container(8004).ListItem.Property(ItemRating),9.5) | SubString(Container(8004).ListItem.Property(ItemRating),9.6) | SubString(Container(8004).ListItem.Property(ItemRating),9.7) | SubString(Container(8004).ListItem.Property(ItemRating),9.8) | SubString(Container(8004).ListItem.Property(ItemRating),9.9) | SubString(Container(8004).ListItem.Property(ItemRating),10)</visible>
+			<texture fallback="rating/widget_stars/NA.png">rating/widget_stars/10.png</texture>
+		</include>		
+		
+		
+		
+	
+		
+</includes>
+

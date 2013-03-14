@@ -1,0 +1,215 @@
+<!--RISE-->
+<includes>
+
+	<default type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<label>-</label>
+		<height>66</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>RISE32</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<selectedcolor>White</selectedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+	</default>
+
+	<default type="fadelabel">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>66</height>
+		<label>-</label>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>RISE32</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<selectedcolor>White</selectedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+		<scrollout>false</scrollout>
+		<pauseatend>2000</pauseatend>
+	</default>
+
+	<default type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>-</width>
+		<height>-</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<texture>-</texture>
+	</default>
+
+	<default type="button">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>60</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>RISE32</font>
+		<label></label>
+		<textoffsetx>50</textoffsetx>
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+		<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+		<texturenofocus></texturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="togglebutton">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>60</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label></label>		
+		<font>RISE32</font>
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+		<texturefocus>listcontrol_item_selected_wide.png</texturefocus>		
+		<texturenofocus></texturenofocus>		
+		<alttexturenofocus></alttexturenofocus>
+		<alttexturefocus>listcontrol_item_selected_wide.png</alttexturefocus>
+		<textoffsetx>50</textoffsetx>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="radiobutton">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>60</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<radiowidth>170</radiowidth>
+		<radioheight>70</radioheight>
+		<radioposx></radioposx>
+		<radioposy></radioposy>		
+		<label></label>
+		<font>RISE32</font>		
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>		
+		<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+		<texturenofocus></texturenofocus>
+		<textureradiofocus>settings_checkmark_checked.png</textureradiofocus>
+		<textureradionofocus>settings_checkmark_unchecked.png</textureradionofocus>
+		<textoffsetx>50</textoffsetx>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="spincontrolex">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+        <height>60</height>
+		<align>center</align>
+		<aligny>center</aligny>	
+		<spinwidth>43</spinwidth>
+        <spinheight>60</spinheight>		
+		<label></label>
+		<font>RISE32</font>
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>	
+		<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+		<texturenofocus></texturenofocus>
+		<textureup>arrow-up-nf.png</textureup>
+        <texturedown>arrow-down-nf.png</texturedown>
+        <textureupfocus>arrow-up-fo.png</textureupfocus>
+        <texturedownfocus>arrow-down-fo.png</texturedownfocus>		
+		<textoffsetx>50</textoffsetx>			
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="spincontrol">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>23</height>
+		<width>23</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<spinwidth>39</spinwidth>
+		<spinheight>39</spinheight>
+		<font>RISE32</font>
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+		<textureup>other_textures/ArrowUpNF.png</textureup>
+		<texturedown>other_textures/ArrowDownNF.png</texturedown>
+		<textureupfocus>other_textures/ArrowUpFo.png</textureupfocus>
+		<texturedownfocus>other_textures/ArrowDownFo.png</texturedownfocus>		
+		<textoffsetx>50</textoffsetx>		
+		<reverse>yes</reverse>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="sliderex">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>60</height>
+		<width>450</width>
+		<sliderwidth>250</sliderwidth>
+		<sliderheight>25</sliderheight>
+		<font>RISE32</font>
+		<textcolor>MainBlue</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>LightGrey</disabledcolor>
+		<texturenofocus></texturenofocus>
+		<texturefocus></texturefocus>		
+		<texturesliderbar>osd/osd_slider_back.png</texturesliderbar>
+		<textureslidernib border="3">osd/osd_slider_button_nofocus.png</textureslidernib>
+		<textureslidernibfocus border="3">osd/osd_slider_button_focus.png</textureslidernibfocus>		
+		<textoffsetx>50</textoffsetx>
+		<textoffsety>0</textoffsety>
+	</default>
+	
+	<default type="slider">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>300</width>
+		<height>30</height>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<texturesliderbar>osd/osd_slider_back.png</texturesliderbar>
+		<textureslidernib border="2">osd/osd_slider_button_focus.png</textureslidernib>
+		<textureslidernibfocus border="2">osd/osd_slider_button_nofocus.png</textureslidernibfocus>		
+	</default>
+
+	<default type="progress">
+		<posx>345</posx>
+		<posy>488</posy>
+		<texturebg border="6">osd/ProgressBack.png</texturebg>
+		<lefttexture>-</lefttexture>
+		<midtexture border="6">osd/ProgressMid.png</midtexture>
+		<righttexture>-</righttexture>
+		<overlaytexture>-</overlaytexture>
+	</default>
+	
+
+	<default type="scrollbar">
+		<width>6</width>
+		<texturesliderbackground>scrollbar_back.png</texturesliderbackground>
+		<texturesliderbar>scrollbar.png</texturesliderbar>
+		<texturesliderbarfocus>scrollbar_focus.png</texturesliderbarfocus>
+		<textureslidernib></textureslidernib>
+		<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
+		<showonepage>true</showonepage>
+		<orientation>vertical</orientation>
+	</default>
+
+	<default type="textbox">
+		<label>-</label>
+		<font>RISE32</font>
+		<textcolor>white</textcolor>
+		<shadowcolor></shadowcolor>
+		<pagecontrol>61</pagecontrol>
+		<autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll> <!--10000 , 2000, ,10000-->
+	</default>
+
+</includes>

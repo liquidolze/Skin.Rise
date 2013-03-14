@@ -1,0 +1,96 @@
+<!--RISE-->
+<window id="123">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<controls>		
+		
+		<control type="group" id="1230">
+		
+			<visible>!Window.IsActive(filebrowser)</visible>	
+			<visible>!Window.IsActive(sliderdialog)</visible>
+		
+			<animation time="600" effect="fade">Visible</animation> 
+			<animation time="600" effect="fade">Hidden</animation>	
+
+			<animation time="600" effect="fade">WindowOpen</animation> 
+			<animation time="600" effect="fade">WindowClose</animation>		
+			
+		
+			<!--Panel-->
+			<control type="image">				
+				<posx>210</posx>
+				<posy>97</posy>
+				<width>1550</width>
+				<height>684</height>			
+				<texture>osd/osd_top_panel.png</texture>
+			</control>
+		
+			<!--Buttons-->
+			<control type="group" id="1231">			
+				<posx>300</posx>
+				<posy>150</posy>							
+				
+				<control type="label" id="2">
+					<description>Settings</description>
+					<posx>15</posx>
+					<posy>48</posy>
+					<width>870</width>				
+					<font>RISE40</font>
+					<shadowcolor>black</shadowcolor>
+					<textoffsetx>30</textoffsetx>		
+					<align>left</align>
+				</control>
+				<control type="grouplist" id="5">
+					<description>Control Area</description>
+					<posx>15</posx>
+					<posy>130</posy>
+					<width>1350</width>
+					<height>430</height>
+					<itemgap>3</itemgap>
+					<orientation>vertical</orientation>
+					<pagecontrol>60</pagecontrol>
+					<onleft>28</onleft>
+					<onright>28</onright>
+					<onup>28</onup>
+					<ondown>28</ondown>
+				</control>
+				<control type="button" id="7">
+					<description>Default Button</description>
+					<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<textcolor>White</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<align>left</align>
+				</control>
+				<control type="radiobutton" id="8">
+					<description>Default RadioButton</description>
+					<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<textcolor>White</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<align>left</align>
+				</control>
+				<control type="spincontrolex" id="9">
+					<description>Default spincontrolex</description>
+					<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<textcolor>White</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<align>left</align>
+					<reverse>yes</reverse>
+				</control>
+				<control type="sliderex" id="10">
+					<description>Default Slider</description>
+					<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<textcolor>White</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<align>left</align>
+				</control>
+			</control>
+		</control>
+		
+	</controls>
+
+</window>

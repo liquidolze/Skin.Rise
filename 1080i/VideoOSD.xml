@@ -1,0 +1,497 @@
+<!--RISE-->
+<window id="2901">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	 
+	<controls>
+	
+		<!--Panel-->
+		<control type="group">			
+				
+			<visible>!Window.IsActive(filebrowser)</visible>
+			<visible>!Window.IsActive(sliderdialog)</visible>
+
+			<animation time="600" effect="fade">Visible</animation> 
+			<animation time="600" effect="fade">Hidden</animation>	
+
+			<animation time="600" effect="fade">WindowOpen</animation> 
+			<animation time="600" effect="fade">WindowClose</animation>		
+			
+	
+			<!--Panel-->
+			<control type="image">
+				<posx>210</posx>
+				<posy>700</posy>
+				<width>1560</width>
+				<height>376</height>			
+				<texture>osd/osd_panel.png</texture>
+			</control>			
+
+			<!--Pause-->
+			<control type="image">	
+				<visible>player.paused</visible>
+				<animation delay="300" time="600" effect="fade">Visible</animation> 
+				<posx>760</posx>	<!--Center 960-->
+				<posy>340</posy>	<!--Center 540-->
+				<width>400</width>
+				<height>400</height>
+				<texture>osd_pause.png</texture>			
+			</control>			
+			
+			<!--FF/RW-->
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx2</label>				
+				<visible>player.forwarding2x</visible>
+			</control>	
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx4</label>
+				<visible>player.forwarding4x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx8</label>
+				<visible>player.forwarding8x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx16</label>
+				<visible>player.forwarding16x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx32</label>
+				<visible>player.forwarding32x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx2</label>
+				<visible>player.rewinding2x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx4</label>
+				<visible>player.rewinding4x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx8</label>
+				<visible>player.rewinding8x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx16</label>
+				<visible>player.rewinding16x</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx32</label>
+				<visible>player.rewinding32x</visible>
+			</control>
+	
+			<!--Cover-->
+			<control type="image"><!--No Movie-->				
+				<posx>290</posx>
+				<posy>775</posy>
+				<width>220</width>
+				<height>220</height>
+				<fadetime>200</fadetime>
+				<texture background="true" fallback="coverdefault.png" >$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio align="top" aligny="top">keep</aspectratio>				
+				<visible>!VideoPlayer.Content(Movies)</visible>
+			</control>
+			<control type="image"><!--Movie-->
+				<description>Movie cover image</description>
+				<posx>290</posx>
+				<posy>775</posy>
+				<width>155</width>
+				<height>220</height>
+				<fadetime>200</fadetime>			
+				<texture background="true" fallback="posterdefault.png" diffuse="postermatte.png">$INFO[VideoPlayer.Cover]</texture>
+				<aspectratio  align="left" aligny="top">stretch</aspectratio>			
+				<visible>VideoPlayer.Content(Movies)</visible>
+			</control>	
+	
+			<!--Label Movie-->			
+			<control type="label">
+				<visible>VideoPlayer.Content(Movies)</visible>
+				<posx>550</posx>
+				<posy>770</posy>
+				<width>900</width>
+				<align>left</align>
+				<font>RISE45</font>
+				<textcolor>White</textcolor>
+				<label>[B]$INFO[VideoPlayer.Title][/B]</label>
+				<scroll>false</scroll>
+			</control>			
+			<control type="label">
+				<visible>VideoPlayer.Content(Movies)</visible>
+				<posx>550</posx>
+				<posy>820</posy>
+				<width>900</width>
+				<align>left</align>
+				<font>RISE35</font>
+				<textcolor>MainBlue</textcolor>
+				<label>$INFO[VideoPlayer.Genre] • $INFO[VideoPlayer.Year]</label>	
+				<scroll>false</scroll>
+			</control>
+			
+			<!-- Label Episode-->			
+			<control type="label">
+				<visible>VideoPlayer.Content(Episodes)</visible>
+				<posx>550</posx>
+				<posy>770</posy>
+				<width>900</width>
+				<align>left</align>
+				<font>RISE45</font>
+				<textcolor>White</textcolor>				
+				<label>[B]$INFO[VideoPlayer.Episode]. $INFO[VideoPlayer.Title][/B]</label>				
+				<scroll>false</scroll>
+			</control>			
+			<control type="label">
+				<visible>VideoPlayer.Content(Episodes)</visible>
+				<posx>550</posx>
+				<posy>820</posy>
+				<width>900</width>
+				<align>left</align>
+				<font>RISE35</font>
+				<textcolor>MainBlue</textcolor>
+				<label>$INFO[VideoPlayer.TVShowTitle] • $LOCALIZE[20373] $INFO[VideoPlayer.Season]</label>
+				<scroll>false</scroll>
+			</control>
+			
+			<!--LabelOhter-->			
+			<control type="label">
+				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible> 
+				<posx>550</posx>
+				<posy>770</posy>
+				<width>900</width>
+				<align>left</align>
+				<font>RISE45</font>
+				<textcolor>White</textcolor>
+				<label>[B]$INFO[VideoPlayer.Title][/B]</label>
+				<scroll>false</scroll>
+			</control>			
+
+			
+			<!--Time-->
+			<control type="label"><!--Left Play Time-->
+				<posx>550</posx>
+				<posy>880</posy>
+				<width>200</width>
+				<align>left</align>
+				<font>RISELight32</font>
+				<label>$INFO[Player.Time]</label>
+			</control>
+			<control type="label"><!--Right Time Remaining-->
+				<posx>1660</posx>
+				<posy>880</posy>
+				<width>200</width>
+				<align>right</align>
+				<font>RISELight32</font>
+				<label>- $INFO[Player.TimeRemaining]</label>
+			</control>
+			<control type="label"><!--End Time-->
+				<posx>550</posx>
+				<posy>952</posy>
+				<width>300</width>
+				<align>left</align>
+				<font>RISELight32</font>
+				<label>$LOCALIZE[41040] $INFO[Player.FinishTime]</label>
+			</control>			
+			
+			<control type="grouplist"><!--Clock-->
+				<posx>1410</posx>
+				<posy>770</posy>
+				<width>400</width>
+				<height>100</height>
+				<align>center</align>
+				<itemgap>4</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<include>animation_fade</include>			
+					<control type="label">				
+						<width min="0" max="150">auto</width>
+						<height>80</height>
+						<info>System.Time(hh:mm)</info>
+						<font>RISE45</font>
+						<aligny>center</aligny>
+						<textcolor>MainBlue</textcolor>
+					</control>
+					<control type="label">				
+						<visible>substring(system.time,AM,right)</visible>
+						<width min="0" max="150">auto</width>
+						<height>80</height>
+						<label>AM</label>
+						<font>RISE45</font>
+						<aligny>center</aligny>
+						<textcolor>MainBlue</textcolor>
+					</control>					
+					<control type="label">				
+						<visible>substring(system.time,PM,right)</visible>
+						<width min="0" max="150">auto</width>
+						<height>80</height>
+						<label>PM</label>
+						<font>RISE45</font>
+						<aligny>center</aligny>
+						<textcolor>MainBlue</textcolor>
+					</control>
+				</control>
+
+			<!--Process/Seekbar-->
+			<control type="progress" id="23">
+				<description>Progress Bar</description>
+				<posx>700</posx>
+				<posy>905</posy>
+				<width>800</width>
+				<info>Player.Progress</info>
+				<visible>true</visible>
+			</control>
+			<control type="slider" id="401">
+				<description>Seekbar</description>
+				<posx>700</posx>
+				<posy>905</posy>
+				<width>800</width>				
+				<visible>Player.Seeking</visible>
+			</control>
+
+		</control>
+		
+		<!--Buttons-->	
+		<control type="group" id="2902">			
+			
+			
+			<animation time="600" effect="fade">Visible</animation> 
+			<animation time="600" effect="fade">Hidden</animation>	
+
+			<animation time="600" effect="fade">WindowOpen</animation> 
+			<animation time="600" effect="fade">WindowClose</animation>		
+				
+			<visible>!Window.IsVisible(sliderdialog)</visible>		
+			<visible>!Window.IsActive(filebrowser)</visible>		
+				
+				<control type="togglebutton" id="1">	<!--Play, Pause-->
+					<description>Play/Pause</description>
+					<posx>1000</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label></label>
+					<altlabel></altlabel>
+					<font>-</font>
+					<texturefocus>osd/PauseFO.png</texturefocus>
+					<texturenofocus>osd/PauseNF.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<alttexturefocus>osd/PlayFO.png</alttexturefocus>
+					<alttexturenofocus>osd/PlayNF.png</alttexturenofocus>
+					<onclick>PlayerControl(Play)</onclick>
+					<onleft>9</onleft>
+                    <onright>2</onright>
+				</control>				
+				<control type="button" id="2">			<!--Stop-->
+					<description>Stop</description>
+					<posx>1070</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label></label>
+					<font>-</font>
+					<texturefocus>osd/StopFO.png</texturefocus>
+					<texturenofocus>osd/StopNF.png</texturenofocus>
+					<onclick>PlayerControl(Stop)</onclick>
+					<onleft>1</onleft>
+                    <onright>3</onright>
+				</control>
+				<control type="button" id="3">			<!--FF-->
+					<description>Fast Forward</description>
+					<posx>1140</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label></label>
+					<font>-</font>
+					<texturefocus>osd/ForwardFO.png</texturefocus>
+					<texturenofocus>osd/ForwardNF.png</texturenofocus>
+					<onclick>PlayerControl(Forward)</onclick>
+					<onleft>2</onleft>
+                    <onright>4</onright>
+				</control>
+				<control type="button" id="4">			<!--Next-->
+					<description>Next</description>
+					<posx>1210</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>209</label>
+					<font>-</font>
+					<texturefocus>osd/NextTrackFO.png</texturefocus>
+					<texturenofocus>osd/NextTrackNF.png</texturenofocus>
+					<onclick>PlayerControl(Next)</onclick>
+					<onleft>3</onleft>
+                    <onright>5</onright>
+				</control>
+				<control type="button" id="5">			<!--Audio Settings-->
+					<description>Audio Settings</description>
+					<posx>1470</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>13396</label>
+					<font>-</font>
+					<texturefocus>osd/AudioFO.png</texturefocus>
+					<texturenofocus>osd/AudioNF.png</texturenofocus>
+					<onclick>ActivateWindow(124)</onclick>
+					<onleft>4</onleft>
+                    <onright>6</onright>
+				</control>
+				<control type="button" id="6">			<!--Video Settings-->
+					<description>Video Settings</description>
+					<posx>1540</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>13395</label>
+					<align>left</align>
+					<font>-</font>
+					<texturefocus>osd/VideoFO.png</texturefocus>
+					<texturenofocus>osd/VideoNF.png</texturenofocus>
+					<onclick>ActivateWindow(123)</onclick>
+					<onleft>5</onleft>
+                    <onright>7</onright>
+				</control>	
+				<control type="button" id="7">			<!--Subtitles Empty-->
+					<description>Subtitles</description>
+					<posx>1610</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>287</label>
+					<font>-</font>
+					<texturefocus>osd/SubtitlesFO.png</texturefocus>
+					<texturenofocus>osd/SubtitlesNF.png</texturenofocus>
+					<onclick>Close</onclick>
+					<onclick>XBMC.RunScript(script.xbmc.subtitles)</onclick>
+					<visible>IsEmpty(Skin.String(SubtitlesPath))</visible>
+					<onleft>6</onleft>
+                    <onright>8</onright>
+				</control>
+				<control type="button" id="7">			<!--Subtitles No Empty-->
+					<description>Subtitles</description>
+					<posx>1610</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>287</label>
+					<font>-</font>
+					<texturefocus>osd/SubtitlesFO.png</texturefocus>
+					<texturenofocus>osd/SubtitlesNF.png</texturenofocus>
+					<onclick>Close</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(SubtitlesPath)])</onclick>
+					<visible>!IsEmpty(Skin.String(SubtitlesPath))</visible>
+					<onleft>6</onleft>
+                    <onright>8</onright>
+				</control>					
+				<control type="button" id="8">			<!--Skip Back-->
+					<description>Skip Back</description>
+					<posx>860</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>210</label>
+					<font>-</font>
+					<texturefocus>osd/PrevTrackFO.png</texturefocus>
+					<texturenofocus>osd/PrevTrackNF.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+					<onleft>7</onleft>
+					<onright>9</onright>
+				</control>
+				<control type="button" id="9">			<!--RR-->
+					<description>Rewind</description>
+					<posx>930</posx>
+					<posy>954</posy>
+					<width>60</width>
+					<height>60</height>
+					<label>31036</label>
+					<font>-</font>
+					<texturefocus>osd/RewindFO.png</texturefocus>
+					<texturenofocus>osd/RewindNF.png</texturenofocus>
+					<onclick>PlayerControl(Rewind)</onclick>
+					<onleft>8</onleft>
+					<onright>1</onright>
+				</control>				
+		</control>	
+
+	</controls>
+
+</window>

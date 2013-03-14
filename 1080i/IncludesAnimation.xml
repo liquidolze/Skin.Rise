@@ -1,0 +1,35 @@
+<!--RISE-->
+<includes>
+
+	<!--  <include>animation_fade</include>  -->
+	<include name="animation_fade">
+		<animation time="600" effect="fade">Visible</animation> 
+		<animation time="600" effect="fade">Hidden</animation>		
+	</include>
+	
+	<!--  <include>animation_fade_open_close</include>  -->
+	<include name="animation_fade_open_close">
+		<animation effect="fade" time="300" >WindowOpen</animation>		
+		<animation effect="fade" time="300" >WindowClose</animation>	
+	</include>
+	
+	<!--  <include>animation_RescentlyAdded_slide</include>  -->
+	<include name="animation_RescentlyAdded_slide">		
+		<animation effect="slide" start="1000" end="0" tween="cubic" easing="inout" time="1000" delay="2000" condition="Window.IsActive(Home)">WindowOpen</animation>
+		<animation effect="slide" start="0" end="1000" tween="cubic" easing="inout" time="1000" delay="0" condition="Window.IsActive(Home)">WindowClose</animation> 
+	</include>
+
+	<!--  <include>animation_hover_slide</include>  -->
+	<include name="animation_hover_slide">			
+		<animation effect="fade" time="600">WindowOpen</animation>		
+		<animation effect="slide" start="0" end="-1980" tween="cubic" easing="inout" time="1000">WindowClose</animation>		
+	</include>		
+	
+	<!--  <include>animation_widget_poster</include>  -->
+	<include name="animation_widget_poster">		
+		<animation type="Focus" reversible="false">				
+            <effect type="zoom" start="95" end="100" time="200" center="auto" delay="200" tween="back" easing="inout"/>			
+        </animation>		
+	</include>		
+	
+</includes>

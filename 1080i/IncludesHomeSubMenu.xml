@@ -1,0 +1,423 @@
+<!--RISE-->
+<includes>
+	<include name="HomeSubMenu">
+		
+		<!--Dim-->
+		<control type="image">
+			<animation time="600" effect="fade" start="100" end="0" condition="!ControlGroup(9000).HasFocus()">Conditional</animation> 
+			<animation effect="fade" time="300" >WindowClose</animation>				
+			<include>Dimensions_Fullscreen</include>				
+			<colordiffuse>22FFFFFF</colordiffuse>
+			<texture background="true">white_back.png</texture>			
+		</control>		
+		
+		<!--Start Sub Menu-->
+		<control type="group">	
+			<include>animation_hover_slide</include>			
+			<control type="image">				<!--Sub Menu Panel-->
+				<posx>-20</posx>
+				<posy>91</posy>
+				<width>600</width>
+				<height>730</height>
+				<texture>homemenu.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>
+			</control>						
+			<control type="image">				<!--Menu Tab-->
+				<visible>Container(300).HasFocus(3) | Container(300).HasFocus(5) | Container(300).HasFocus(6) | Container(300).HasFocus(10) | Container(300).HasFocus(11)</visible>
+				<posx>600</posx>
+				<posy>330</posy>
+				<width>64</width>
+				<height>199</height>
+				<texture>menu_tab.png</texture>
+				<include>animation_fade</include>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>				
+			</control>		
+			<control type="grouplist" id="9000">
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>
+				<posx>48</posx>
+				<posy>140</posy>
+				<width>470</width>
+				<height>615</height>
+				<itemgap>-</itemgap>
+				<onleft>300</onleft>
+				<onright>300</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<orientation>vertical</orientation>	
+				
+				<!--Shutdown Buttons-->
+				<control type="label" id="1">	<!--Label Menu-->	
+					<visible>Container(300).HasFocus(10)</visible>
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="2">	<!--Seperator-->	
+					<visible>Container(300).HasFocus(10)</visible>
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>	
+				<control type="button" id="3">	<!--Quit-->
+					<visible>Container(300).HasFocus(10)</visible>
+					<visible>System.ShowExitButton</visible>
+					<width>470</width>
+					<label>13012</label>
+					<align>left</align>
+					<onclick>Quit()</onclick>						
+				</control>
+				<control type="button" id="4">	<!--Mastermode-->
+					<visible>Container(300).HasFocus(10)</visible>
+					<visible>System.HasLocks</visible>
+					<width>470</width>
+					<label>20046</label>
+					<altlabel>20045</altlabel>
+					<align>left</align>
+					<onclick>xbmc.mastermode</onclick>					
+				</control>
+				<control type="button" id="5">	<!--LogOff Profile-->
+					<visible>Container(300).HasFocus(10)</visible>
+					<visible>System.Loggedon + System.HasLoginScreen</visible>
+					<width>470</width>					
+					<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+					<align>left</align>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>System.LogOff</onclick>					
+				</control>
+				<control type="button" id="6">	<!--Chancle Custom Shutdown Timer button-->
+					<visible>Container(300).HasFocus(10)</visible>	
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					<width>470</width>
+					<label>20151</label>
+					<align>left</align>
+					<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>					
+				</control>
+				<control type="button" id="7">	<!--Start Custom Shutdown Timer button-->
+					<visible>Container(300).HasFocus(10)</visible>	
+					<visible>!System.HasAlarm(shutdowntimer)</visible>
+					<width>470</width>
+					<label>20150</label>
+					<align>left</align>
+					<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>					
+				</control>
+				<control type="button" id="8">	<!--Shutdown-->
+					<visible>Container(300).HasFocus(10)</visible>								
+					<width>470</width>
+					<label>13005</label>
+					<align>left</align>
+					<onclick>ShutDown()</onclick>				
+				</control>
+				<control type="button" id="9">	<!--Suspend-->
+					<visible>Container(300).HasFocus(10)</visible>								
+					<width>470</width>
+					<label>13011</label>
+					<align>left</align>
+					<onclick>XBMC.Suspend()</onclick>					
+				</control>
+				<control type="button" id="10">	<!--Reboot-->
+					<visible>Container(300).HasFocus(10)</visible>							
+					<width>470</width>
+					<label>13013</label>
+					<align>left</align>
+					<onclick>XBMC.Reset()</onclick>				
+				</control>
+				<control type="label" id="11">	<!--Alarm Time-->
+					<visible>Container(300).HasFocus(10)</visible>
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					<width>470</width>
+					<align>center</align>
+					<label>$LOCALIZE[20145] [B]$INFO[System.Alarmpos][/B]</label>
+					<align>left</align>							
+				</control>
+				<control type="button" id="12">	<!--Open Player Controls-->
+					<visible>Container(300).HasFocus(10)</visible>
+					<visible>Player.HasMedia</visible>
+					<width>470</width>
+					<label>31015</label>
+					<align>left</align>
+					<onclick>ActivateWindow(playercontrols)</onclick>						
+				</control>				
+				
+				<!--Movie Button-->
+				<control type="label" id="13">	<!--Label Menu-->	
+					<visible>Container(300).HasFocus(5)</visible>	
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="14">	<!--Seperator-->
+					<visible>Container(300).HasFocus(5)</visible>	
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>
+				<control type="button" id="15">	<!--RecentlyAddedMovies-->
+					<visible>Container(300).HasFocus(5)</visible>					
+					<width>470</width>
+					<label>41011</label>					
+					<align>left</align>				
+					<onclick>ActivateWindow(VideoLibrary,RecentlyAddedMovies,return)</onclick>					
+				</control>
+				<control type="button" id="16">	<!--MovieGenres-->
+					<visible>Container(300).HasFocus(5)</visible>
+					<width>470</width>
+					<label>41012</label>					
+					<align>left</align>
+					<onclick>ActivateWindow(VideoLibrary,MovieGenres,return)</onclick>					
+				</control>	
+				<control type="button" id="17">	<!--MovieYears-->
+					<visible>Container(300).HasFocus(5)</visible>
+					<width>470</width>
+					<label>41013</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,MovieYears,return)</onclick>					
+				</control>	
+				<control type="button" id="18">	<!--MovieActors-->
+					<visible>Container(300).HasFocus(5)</visible>					
+					<width>470</width>
+					<label>41014</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,MovieActors,return)</onclick>				
+				</control>
+				<control type="button" id="19">	<!--MovieDirectors-->
+					<visible>Container(300).HasFocus(5)</visible>					
+					<width>470</width>
+					<label>41015</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,MovieDirectors,return)</onclick>					
+				</control>
+				<control type="button" id="20">	<!--Playlists-->
+					<visible>Container(300).HasFocus(5)</visible>					
+					<width>470</width>
+					<label>41016</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,Playlists,return)</onclick>					
+				</control>	
+				<control type="button" id="21">	<!--MusicVideoTitles-->
+					<visible>Container(300).HasFocus(5)</visible>
+					<visible>Library.HasContent(MusicVideos)</visible>					
+					<width>470</width>
+					<label>41017</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,MusicVideoTitles,return)</onclick>						
+				</control>	
+
+				<!--TV-Show Button-->	
+				<control type="label" id="22">	<!--Label Menu-->
+					<visible>Container(300).HasFocus(6)</visible>	
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="23">	<!--Seperator-->	
+					<visible>Container(300).HasFocus(6)</visible>	
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>
+				<control type="button" id="24">	<!--RecentlyAddedEpisodes-->
+					<visible>Container(300).HasFocus(6)</visible>					
+					<width>470</width>
+					<label>41016</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,RecentlyAddedEpisodes,return)</onclick>					
+				</control>					
+				<control type="button" id="25">	<!--TVShowGenres-->
+					<visible>Container(300).HasFocus(6)</visible>					
+					<width>470</width>
+					<label>41012</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,TVShowGenres,return)</onclick>					
+				</control>
+				<control type="button" id="26">	<!--TVShowYears-->
+					<visible>Container(300).HasFocus(6)</visible>				
+					<width>470</width>
+					<label>41013</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,TVShowYears,return)</onclick>					
+				</control>		
+				<control type="button" id="27">	<!--TVShowActors-->
+					<visible>Container(300).HasFocus(6)</visible>					
+					<width>470</width>
+					<label>41014</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(VideoLibrary,TVShowActors,return)</onclick>					
+				</control>	
+				
+				<!--Music Button-->	
+				<control type="label" id="28">	<!--Label Menu-->
+					<visible>Container(300).HasFocus(3)</visible>		
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="29">	<!--Seperator-->	
+					<visible>Container(300).HasFocus(3)</visible>		
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>
+				<control type="button" id="30">	<!--Addons-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41019</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary,addons,return)</onclick>					
+				</control>
+				<control type="button" id="31">	<!--RecentlyAddedAlbums-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41020</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>					
+				</control>
+				<control type="button" id="32">	<!--Artists-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41021</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>					
+				</control>					
+				<control type="button" id="33">	<!--Songs-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41022</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>					
+				</control>	
+				<control type="button" id="34">	<!--MusicLibrary-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41023</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary)</onclick>						
+				</control>			
+				<control type="button" id="35">	<!--Playlists-->
+					<visible>Container(300).HasFocus(3)</visible>					
+					<width>470</width>
+					<label>41016</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(MusicLibrary,Playlists,return)</onclick>					
+				</control>	
+				
+				<!--Settings Button-->
+				<control type="label" id="36">		<!--Label Menu-->	
+					<visible>Container(300).HasFocus(11)</visible>	
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="37">		<!--Seperator-->		
+					<visible>Container(300).HasFocus(11)</visible>	
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>
+				<control type="button" id="38">		<!--Filemanager-->
+					<visible>Container(300).HasFocus(11)</visible>				
+					<width>470</width>
+					<label>41025</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(filemanager)</onclick>					
+				</control>						
+				<control type="button" id="39">		<!--AddonBrowser-->
+					<visible>Container(300).HasFocus(11)</visible>							
+					<width>470</width>
+					<label>41026</label>					
+					<align>left</align>					
+					<onclick>activatewindow(AddonBrowser)</onclick>					
+				</control>					
+				<control type="button" id="40">		<!--Programs-->
+					<visible>Container(300).HasFocus(11)</visible>								
+					<width>470</width>
+					<label>41027</label>					
+					<align>left</align>					
+					<onclick>ActivateWindow(Programs)</onclick>					
+				</control>	
+				<control type="image" id="41">		<!--Space-->	
+					<visible>Container(300).HasFocus(11)</visible>	
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_space.png</texture>				
+				</control>		
+				<control type="label" id="42">		<!--Widgets:-->		
+					<visible>Container(300).HasFocus(11)</visible>	
+					<width>469</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]Widgets[/B]</label>
+					<textcolor>White</textcolor>						
+				</control>	
+				<control type="image" id="43">		<!--Seperator-->	
+					<visible>Container(300).HasFocus(11)</visible>	
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>		
+				<control type="radiobutton" id="44"><!--New Movies Widget-->
+					<visible>Container(300).HasFocus(11)</visible>										
+					<width>470</width>
+					<align>left</align>				
+					<label>$LOCALIZE[41100]</label>					
+					<onclick>Skin.ToggleSetting(NewMovies)</onclick>
+					<selected>Skin.HasSetting(NewMovies)</selected>					
+				</control>
+				<control type="radiobutton" id="45"><!--New TV Shows Widget--> 
+					<visible>Container(300).HasFocus(11)</visible>						
+					<width>470</width>
+					<align>left</align>				
+					<label>$LOCALIZE[41101]</label>					
+					<onclick>Skin.ToggleSetting(NewTVShows)</onclick>
+					<selected>Skin.HasSetting(NewTVShows)</selected>					
+				</control>	
+				<control type="radiobutton" id="46"><!--New Album Widget--> 
+					<visible>Container(300).HasFocus(11)</visible>								
+					<width>470</width>
+					<align>left</align>				
+					<label>$LOCALIZE[41102]</label>					
+					<onclick>Skin.ToggleSetting(NewAlbum)</onclick>
+					<selected>Skin.HasSetting(NewAlbum)</selected>					
+				</control>	
+				<control type="radiobutton" id="47"><!--Qlock Widget--> 
+					<visible>Container(300).HasFocus(11)</visible>								
+					<width>470</width>
+					<align>left</align>				
+					<label>$LOCALIZE[41103]</label>					
+					<onclick>Skin.ToggleSetting(Qlock)</onclick>
+					<selected>Skin.HasSetting(Qlock)</selected>					
+				</control>	
+				
+			</control>	
+		</control>		
+	
+	</include>	
+</includes>

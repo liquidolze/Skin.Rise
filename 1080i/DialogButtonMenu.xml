@@ -1,0 +1,122 @@
+<!--RISE-->
+<window type="buttonMenu" id="111">
+	<defaultcontrol always="true">3110</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>	
+		
+		<include>Dim</include>
+
+		<control type="group">
+			<posx>550</posx>
+			<posy>50</posy>			
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+			
+			<control type="image">				<!--Menu Panel-->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>631</width>
+				<height>820</height>
+				<texture flipx="true">homemenu.png</texture>				
+			</control>
+			<control type="button" id="9001">	<!--Label Menu-->	
+				<posx>65</posx>
+				<posy>75</posy>
+				<width>495</width>
+				<align>left</align>
+				<font>RISELight40</font>
+				<label>[B]$LOCALIZE[41090]:[/B]</label>	
+				<textcolor>White</textcolor>						
+			</control>		
+			<control type="grouplist" id="3110"><!--Grouplist Button-->		
+				<posx>65</posx>
+				<posy>160</posy>
+				<width></width>
+				<align>left</align>
+				<height>600</height>
+				<itemgap>-</itemgap>
+
+				<!--Buttons-->	
+				<control type="button" id="3111"><!--Exit XBMC button-->
+					<visible>System.ShowExitButton</visible>
+					<width>495</width>
+					<label>13012</label>
+					<align>left</align>
+					<onclick>Quit()</onclick>					
+				</control>
+				<control type="button" id="3112"><!--Master mode button-->	
+					<visible>System.HasLocks</visible>
+					<width>495</width>				
+					<label>20046</label>
+					<altlabel>20045</altlabel>
+					<align>left</align>
+					<onclick>xbmc.mastermode</onclick>					
+				</control>
+				<control type="button" id="3113"><!--LogOff Profile-->	
+					<visible>System.Loggedon + System.HasLoginScreen</visible>
+					<width>495</width>								
+					<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+					<align>left</align>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>System.LogOff</onclick>					
+				</control>
+				<control type="button" id="3114"><!--Custom Shutdown Timer button-->
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					<width>495</width>				
+					<label>20151</label>
+					<align>left</align>
+					<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>						
+				</control>
+				<control type="button" id="3115"><!--Custom Shutdown Timer button-->	
+					<visible>!System.HasAlarm(shutdowntimer)</visible>
+					<width>495</width>				
+					<label>20150</label>
+					<align>left</align>
+					<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>				
+				</control>
+				<control type="button" id="3116"><!--Shutdown-->					
+					<width>495</width>				
+					<label>13005</label>
+					<align>left</align>
+					<onclick>ShutDown()</onclick>					
+				</control>
+				<control type="button" id="3117"><!--Suspend XBMC-->					
+					<width>495</width>				
+					<label>13011</label>
+					<align>left</align>
+					<onclick>XBMC.Suspend()</onclick>					
+				</control>
+				<control type="button" id="3118"><!--Reboot button-->					
+					<width>495</width>				
+					<label>13013</label>
+					<align>left</align>
+					<onclick>XBMC.Reset()</onclick>				
+				</control>
+				<control type="label" id="3119"><!--Alarm Time-->
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+					<width>495</width>				
+					<align>center</align>
+					<label>$LOCALIZE[20145] [B]$INFO[System.Alarmpos][/B]</label>
+					<align>left</align>						
+				</control>
+				<control type="button" id="3120"><!---Open Player Controls-->	
+					<visible>Player.HasMedia</visible>
+					<width>495</width>				
+					<label>31015</label>
+					<align>left</align>
+					<onclick>ActivateWindow(playercontrols)</onclick>					
+				</control>
+			</control>
+		</control>
+		
+	</controls>
+
+</window>

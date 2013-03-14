@@ -1,0 +1,280 @@
+<!-- RISE -->
+<window id="132">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>	
+
+	<include>Dim</include>
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Start DialogContentSettings								-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<control type="group">
+			<visible>!Window.IsActive(addonsettings)</visible>
+			<visible>!Window.IsActive(filebrowser)</visible>
+			<posx>200</posx>
+			<posy>34</posy>		
+
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>			
+			
+			<animation type="Visible">
+                <effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+            </animation>
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Dialog Background									-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1580</width>
+				<height>915</height>
+				<texture>dialog_info.png</texture>
+			</control>
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Image												-->
+	<!-------------------------------------------------------------------------------------------->		
+				
+			
+			<control type="image">
+				<posx>220</posx>
+				<posy>330</posy>
+				<width>200</width>
+				<height>200</height>
+				<texture fallback="coverdefault.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio align="left" aligny="top">keep</aspectratio>				
+			</control>
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Label												-->
+	<!-------------------------------------------------------------------------------------------->		
+	
+	
+			<control type="label" id="20">
+				<description>Header Label</description>
+				<posx>180</posx>
+				<posy>100</posy>
+				<align>Left</align>
+				<font>RISE40</font>
+				<width>600</width>
+				<label>20333</label>
+			</control>		
+		
+			<control type="label">
+				<description>Directory Contains</description>
+				<posx>180</posx>
+				<posy>170</posy>
+				<width>450</width>
+				<align>Left</align>
+				<textcolor>MainBlue</textcolor>
+				<font>RISE30</font>
+				<label>20344</label>
+			</control>
+		
+		
+			<control type="label">
+				<description>Used Scraper Header</description>
+				<posx>180</posx>
+				<posy>550</posy>
+				<width>450</width>
+				<align>left</align>	
+				<textcolor>MainBlue</textcolor>
+				<font>RISE30</font>
+				<label>20195</label>							
+			</control>
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Movie or TV-Show or Music "left"							-->
+	<!-------------------------------------------------------------------------------------------->		
+	
+			<control type="spincontrolex" id="3">
+				<description>Directory Content</description>
+				<posx>90</posx>
+				<posy>240</posy>
+				<height>50</height>
+				<width>460</width>
+				<align>left</align>	
+				<font>-</font><!--disable-->							
+				<label>-</label>
+				<texturefocus>listcontrol_item_selected_wide.png</texturefocus>
+				<texturenofocus></texturenofocus>				
+				<onup></onup>
+				<ondown>4</ondown>
+				<onleft>5</onleft>
+				<onright>5</onright>
+			</control>
+			
+			<!--Label Spincontrolex-->
+			<control type="label">
+				<description>Content Picker label</description>
+				<posx>170</posx><!-- +offset 80-->
+				<posy>233</posy><!-- -offset 7 -->
+				<width>300</width>
+				<align>left</align>
+				<font>RISE32</font>
+				<label>$INFO[Control.GetLabel(3)]</label>
+			</control>
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Change Scaper "left"									-->
+	<!-------------------------------------------------------------------------------------------->		
+	
+			<control type="list" id="4">
+				<posx>90</posx>
+				<posy>620</posy>
+				<width>460</width>
+				<height>150</height>
+				<onup>3</onup>
+				<ondown>28</ondown>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				
+				<itemlayout height="50">					
+					<control type="label">
+						<posy>-5</posy>
+						<posx>90</posx>			
+						<width>460</width>
+						<font>RISE32</font>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+
+				<focusedlayout height="50">
+					<control type="image">
+						<visible>Control.HasFocus(4)</visible>						
+						<width>460</width>
+						<height>50</height>
+						<texture>listcontrol_item_selected_wide.png</texture>
+					</control>					
+					<control type="label">
+						<posy>-5</posy>
+						<posx>90</posx>
+						<width>460</width>
+						<font>RISE32</font>		
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+
+			</control>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Setting Scaper "right"										-->
+	<!-------------------------------------------------------------------------------------------->			
+			
+			<control type="grouplist" id="5">
+				<description>Control Area</description>
+				<posx>550</posx>
+				<posy>179</posy>
+				<width>940</width>
+				<height>265</height>
+				<itemgap>3</itemgap>
+				<onup>28</onup>
+				<ondown>28</ondown>
+				<onleft>3</onleft>
+				<onright>3</onright>
+				<orientation>vertical</orientation>
+			</control>
+
+			<control type="button" id="7">
+				<description>default</description>				
+				<height>50</height>					
+				<align>left</align>
+				<texturefocus>listcontrol_item_selected_wide.png</texturefocus>				
+			</control>
+
+			<control type="radiobutton" id="8">
+				<description>radioButton</description>				
+				<height>50</height>					
+				<width>200</width>
+				<align>left</align>
+				<font>RISE30</font>
+				<radioposx></radioposx>
+				<texturefocus>listcontrol_item_selected_wide.png</texturefocus>				
+			</control>
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Botton	Setting, OK, Cancel								-->
+	<!-------------------------------------------------------------------------------------------->				
+			
+			
+			<control type="button" id="28">
+				<description>Ok</description>
+				<posx>610</posx>
+				<posy>680</posy>				
+				<label>186</label>
+				<width>250</width>	
+				<height>80</height>
+				<font>RISE25</font>		
+				<textcolor>Black</textcolor>
+				<focusedcolor>White</focusedcolor>
+				<disabledcolor>Grey</disabledcolor>				
+				<texturefocus border="15">button-green.png</texturefocus>
+				<texturenofocus border="15">button-clear.png</texturenofocus>
+				<onleft>6</onleft>
+				<onright>29</onright>
+				<onup>4</onup>
+				<ondown></ondown>
+			</control>
+
+			<control type="button" id="29">
+				<description>Cancel</description>
+				<posx>880</posx>
+				<posy>680</posy>				
+				<label>222</label>
+				<width>250</width>		
+				<height>80</height>
+				<font>RISE25</font>		
+				<textcolor>Black</textcolor>
+				<focusedcolor>White</focusedcolor>
+				<disabledcolor>Grey</disabledcolor>				
+				<texturefocus border="15">button-red.png</texturefocus>
+				<texturenofocus border="15">button-clear.png</texturenofocus>
+				<onleft>28</onleft>
+				<onright>6</onright>
+				<onup>4</onup>
+				<ondown></ondown>
+			</control>
+			
+			<control type="button" id="6">
+				<description>Settings</description>
+				<posx>1150</posx>
+				<posy>680</posy>				
+				<label>5</label>
+				<width>250</width>		
+				<height>80</height>
+				<font>RISE25</font>		
+				<textcolor>Black</textcolor>
+				<focusedcolor>White</focusedcolor>
+				<disabledcolor>Grey</disabledcolor>				
+				<texturefocus border="15">button-blue.png</texturefocus>
+				<texturenofocus border="15">button-clear.png</texturenofocus>				
+				<onleft>29</onleft>
+				<onright>28</onright>
+				<onup>4</onup>
+				<ondown></ondown>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

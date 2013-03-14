@@ -1,0 +1,126 @@
+<!-- RISE -->
+<window id="6">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50</views>
+
+	<controls>
+
+		<include>GlobalBackground</include>
+		<include>View_50_List</include>
+
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Sub-Menu											-->
+	<!-------------------------------------------------------------------------------------------->
+	
+		<!--Sub Menu-->
+		<control type="group" id="611">	
+			<include>animation_hover_slide</include>
+			
+		<!--Sub Menu Panel-->
+			<control type="image">
+				<posx>-20</posx>
+				<posy>96</posy>
+				<width>600</width>
+				<height>651</height>
+				<texture>homemenu.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />				
+				</animation>
+			</control>		
+	
+			<!--Menu Tab-->
+			<control type="image">				
+				<posx>600</posx>
+				<posy>330</posy>
+				<width>64</width>
+				<height>199</height>
+				<texture>menu_tab.png</texture>
+				<include>animation_fade</include>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>				
+			</control>		
+		
+	<!------------------------------------------------------------------------------------------>				
+		
+		<!--Side Menu-->
+			<control type="grouplist" id="9000">
+				<posx>48</posx>
+				<posy>170</posy>
+				<width>469</width>
+				<height>620</height>
+				<itemgap>-</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<orientation>vertical</orientation>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>			
+				
+	<!------------------------------------------------------------------------------------------>	
+
+			<control type="button" id="2">
+				<description>View</description>
+				<width>330</width>
+				<align>left</align>
+			</control>
+
+			<control type="button" id="3">
+				<description>Sort</description>
+				<width>330</width>
+				<align>left</align>
+			</control>
+
+			<control type="togglebutton" id="4">
+				<description>Ascending</description>
+				<width>330</width>
+				<align>left</align>
+				<label>584</label>
+				<altlabel>585</altlabel>
+			</control>
+
+			<control type="radiobutton" id="20">
+				<description>Shuffle</description>
+				<width>330</width>
+				<align>left</align>
+				<label>191</label>
+			</control>
+
+			<control type="button" id="21">
+				<description>Save</description>
+				<width>330</width>
+				<align>left</align>
+				<label>190</label>
+			</control>
+
+			<control type="button" id="22">
+				<description>Clear</description>
+				<width>330</width>
+				<align>left</align>
+				<label>192</label>
+			</control>
+
+			<control type="button" id="23">
+				<description>Play</description>
+				<width>330</width>
+				<align>left</align>
+				<label>208</label>
+			</control>
+
+			<control type="button" id="98">
+				<description>Open Player Controls</description>
+				<width>330</width>
+				<align>left</align>
+				<label>31015</label>
+				<onclick>ActivateWindow(playercontrols)</onclick>
+				<visible>Player.HasMedia</visible>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

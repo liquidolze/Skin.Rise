@@ -1,0 +1,972 @@
+﻿<!--RISE-->
+<window id="120">		
+	<defaultcontrol always="true">9100</defaultcontrol>	
+	<!--<onload>RunScript(script.artistslideshow)</onload>-->	
+	
+	<controls>
+	
+		
+		<!-------------------------------------------------------------------------------------------->
+		<!--								Start OSD												-->
+		<!-------------------------------------------------------------------------------------------->
+		
+		<control type="group">					
+			
+			<visible>Player.HasAudio</visible>			
+		
+			
+			<animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+                <effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+            </animation>			
+			
+			<animation type="Visible">
+                <effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+            </animation>
+            <animation type="Hidden">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+            </animation>
+
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Fanart												-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<!--Fanart Music-->
+			<control type="image">				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width> 
+				<height>1080</height>					
+				<texture background="true" fallback="hover_music.png">$INFO[MusicPlayer.Property(Fanart_Image]</texture>		
+				<colordiffuse>HoverDiffuse</colordiffuse>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<fadetime>1500</fadetime>
+				<include>animation_fade</include>		
+				<include>animation_hover_slide</include>			
+			</control>
+			
+			<!--
+			<control type="multiimage">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width> 
+				<height>1080</height>
+				<fadetime>1500</fadetime>
+				<fadetime>1500</fadetime>
+				<timeperimage>4000</timeperimage>    
+				<randomize>true</randomize>            
+				<imagepath background="true">$INFO[ListItem.Path,,extrathumbs]</imagepath>
+				<colordiffuse>HoverDiffuse</colordiffuse>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+			</control>
+			-->
+			
+			<!--Fanart Overlay-->
+			<control type="image">				
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1920</width> 
+				<height>1080</height>					
+				<texture>fanart_overlay.png</texture>		
+				<colordiffuse>HoverDiffuse</colordiffuse>				
+				<fadetime>1500</fadetime>
+				<include>animation_fade</include>		
+				<include>animation_hover_slide</include>			
+			</control>
+	
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Artist Slideshow									-->
+	<!-------------------------------------------------------------------------------------------->
+		
+			<!--
+			<control type="group">			
+				
+				<control type="multiimage">
+					<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow))</visible>
+					<posx>1395</posx>
+					<posy>380</posy>
+					<width>400</width>
+					<height>300</height>
+					<imagepath background="true" diffuse="music_osd_fanart_matte.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+					<aspectratio aligny ="center" align="center">strech</aspectratio>
+					<colordiffuse>99FFFFFF</colordiffuse>					
+					<timeperimage>5000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+				</control>
+				
+				<control type="multiimage">
+					<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow))</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1920</width>
+					<height>1080</height>
+					<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>						
+					<timeperimage>8000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+				</control>				
+				
+				<control type="image">				
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1920</width> 
+					<height>1080</height>					
+					<texture>fanart_overlay.png</texture>		
+					<colordiffuse>HoverDiffuse</colordiffuse>				
+					<fadetime>1500</fadetime>
+					<include>animation_fade</include>		
+					<include>animation_hover_slide</include>			
+				</control>
+				
+				
+				<control type="textbox" id="1002">
+					<description>Artist Biography from Artist Slideshow</description>
+					<posx>1395</posx>
+					<posy>120</posy>
+					<width>400</width>
+					<height>250</height>
+					<align>justify</align>
+					<aligny>top</aligny>
+					<font>RISE30</font>
+					<scroll>true</scroll>
+					<textcolor>66b8b7b7</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<autoscroll time="3000" delay="10000" repeat="5000"></autoscroll>
+					<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</label>
+					<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtistBiography))</visible>
+				</control>
+				
+				
+			</control>			
+			-->
+		
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Clock+Header										-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<!--Common Clock-->	
+			<include>Common_Clock</include>	
+			<!--Header MusicOSD-->
+			<include>Header_MusicOSD</include>	
+	
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Panel 												-->
+	<!-------------------------------------------------------------------------------------------->		
+			
+			<control type="image">			
+				<posx>0</posx>
+				<posy>600</posy>
+				<width>1450</width>
+				<height>520</height>			
+				<texture>dialog_music_osd.png</texture>
+			</control>	
+			
+			<control type="image">
+				<posx>1295</posx>
+				<posy>600</posy>
+				<width>600</width>
+				<height>520</height>			
+				<texture>dialog_music_osd_button.png</texture>
+			</control>		
+			
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								CD Art													-->
+	<!-------------------------------------------------------------------------------------------->
+			
+			<control type="group">	
+			
+			<animation effect="slide" start="0" end="70" time="1000" delay="1000" >WindowOpen</animation>	
+			<animation effect="slide" start="0" end="-70" time="1000" delay="100" condition="Player.Paused">Conditional</animation>
+			
+				<control type="image">
+					<posx>140</posx>
+					<posy>750</posy>
+					<width>220</width>
+					<height>220</height>
+					<fadetime>300</fadetime>					
+					<animation effect="rotate" end="-360" center="auto" time="8000" delay="0" loop="true" reversible="false" condition="Player.HasAudio">Conditional</animation>				
+					<aspectratio align="right">keep</aspectratio>			
+					<texture background="true">cdart/avalon_vinyl.png</texture>				
+				</control>
+
+			
+			</control>		
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Cover													-->
+	<!-------------------------------------------------------------------------------------------->
+		
+			<control type="group">		
+				<posx>140</posx>
+				
+				<control type="image">				
+					<posx>0</posx>
+					<posy>750</posy>
+					<width>220</width>
+					<height>220</height>
+					<fadetime>200</fadetime>
+					<texture background="true" fallback="coverdefault.png" diffuse="covermatte_cdart.png">$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>			
+				</control>
+				
+				<control type="image">				
+					<posx>0</posx>
+					<posy>970</posy>
+					<width>220</width>
+					<height>220</height>
+					<fadetime>200</fadetime>
+					<texture background="true" fallback="coverdefault.png" flipy="true" diffuse="covermatte_reflect_light.png">$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>			
+				</control>
+			
+			</control>
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Info Label												-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<control type="group">
+				<posx>470</posx>
+			
+				<!--Title-->
+				<control type="label">				
+					<posx>0</posx>
+					<posy>730</posy>
+					<width>200</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>MainBlue</textcolor>
+					<label>$LOCALIZE[369]:</label>
+					<scroll>false</scroll>
+				</control>	
+				<control type="label">				
+					<posx>200</posx>
+					<posy>730</posy>
+					<width>450</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>White</textcolor>
+					<label>$INFO[MusicPlayer.Title]</label>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+				</control>		
+				
+				<!--Artist-->
+				<control type="label">				
+					<posx>0</posx>
+					<posy>775</posy>
+					<width>200</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>MainBlue</textcolor>
+					<label>$LOCALIZE[557]:</label>
+					<scroll>false</scroll>
+				</control>	
+				<control type="label">				
+					<posx>200</posx>
+					<posy>775</posy>
+					<width>450</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>White</textcolor>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+				</control>	
+
+				<!--Album-->
+				<control type="label">				
+					<posx>0</posx>
+					<posy>820</posy>
+					<width>200</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>MainBlue</textcolor>
+					<label>$LOCALIZE[558]:</label>
+					<scroll>false</scroll>
+				</control>	
+				<control type="label">				
+					<posx>200</posx>
+					<posy>820</posy>
+					<width>450</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>White</textcolor>
+					<label>$INFO[MusicPlayer.Album]</label>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+				</control>	
+
+				<!--Year-->
+				<control type="label">				
+					<posx>0</posx>
+					<posy>865</posy>
+					<width>200</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>MainBlue</textcolor>
+					<label>$LOCALIZE[562]:</label>
+					<scroll>false</scroll>
+				</control>	
+				<control type="label">				
+					<posx>200</posx>
+					<posy>865</posy>
+					<width>450</width>
+					<align>left</align>
+					<font>RISELight35</font>
+					<textcolor>White</textcolor>
+					<label>$INFO[MusicPlayer.Year]</label>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+				</control>		
+			
+			</control>	
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Time													-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<!--Left Play Time-->
+			<control type="label">
+				<posx>470</posx>
+				<posy>930</posy>
+				<width>200</width>
+				<align>left</align>
+				<font>RISELight32</font>
+				<label>$INFO[Player.Time]</label>
+			</control>
+			
+			<!--Right Time Remaining-->
+			<control type="label">
+				<posx>1230</posx>
+				<posy>930</posy>
+				<width>200</width>
+				<align>left</align>
+				<font>RISELight32</font>
+				<label>- $INFO[Player.TimeRemaining]</label>
+			</control>	
+		
+	<!-------------------------------------------------------------------------------------------->
+	<!--							Process/Seekbar												-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+			<control type="progress" id="23">
+				<description>Progress Bar</description>
+				<posx>670</posx>
+				<posy>955</posy>
+				<width>540</width>
+				<info>Player.Progress</info>
+				<visible>true</visible>
+			</control>
+
+			<control type="slider" id="401">
+				<description>Seekbar</description>
+				<posx>670</posx>
+				<posy>955</posy>
+				<width>540</width>				
+				<visible>Player.Seeking</visible>
+			</control>		
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Rating													-->
+	<!-------------------------------------------------------------------------------------------->
+			
+			<control type="image">
+				<description>Rating value</description>
+				<posx>1150</posx>
+				<posy>830</posy>
+				<width>180</width>
+				<height>75</height>
+				<colordiffuse>88FFFFFFF</colordiffuse>
+				<texture>rating/$INFO[ListItem.StarRating]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+				
+	<!-------------------------------------------------------------------------------------------->
+	<!--								EQ														-->
+	<!-------------------------------------------------------------------------------------------->	
+		
+						
+			<control type="multiimage">			
+				<visible>!Player.Paused + !Player.Forwarding + !Player.Rewinding</visible>				
+				<posx>1160</posx>
+				<posy>755</posy>
+				<width>158</width> 
+				<height>55</height>				
+				<randomize>false</randomize>            
+				<imagepath>music_now_playing_eq</imagepath>
+				<timeperimage>100</timeperimage>
+				<colordiffuse>88FFFFFFF</colordiffuse>
+				<fadetime>0</fadetime>
+			</control>
+
+			<control type="image">
+				<visible>Player.Paused | Player.Forwarding | Player.Rewinding</visible>	
+				<posx>1160</posx>
+				<posy>755</posy>
+				<width>158</width>
+				<height>55</height>			
+				<texture>music_now_playing_eq/paused/MusicPlayingNow_EQ.png</texture>
+				<colordiffuse>88FFFFFFF</colordiffuse>
+			</control>	
+			
+				
+			
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Playlist												-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		<control type="group">
+		
+			
+			<animation effect="zoom" start="100" end="50" time="300" center="400,540" tween="sine" easing="inout" condition="Player.Paused | Player.Forwarding | Player.Rewinding">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="Player.Paused | Player.Forwarding | Player.Rewinding">Conditional</animation>
+			
+			
+			<posx>140</posx>			
+				
+		<!--Title Label-->
+			<control type="label">
+				<posx>0</posx>
+				<posy>320</posy>
+				<width>900</width>
+				<height>50</height>
+				<aligny>left</aligny>
+				<textcolor>66b8b7b7</textcolor>				
+				<label>$LOCALIZE[182]:</label>
+				<font>RISELight45</font>
+			</control>		
+		
+			<control type="grouplist">
+				<posx>0</posx>
+				<posy>400</posy>
+				<width>900</width>
+				<height>250</height>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>				
+			
+				<!--Now Playing-->
+				<control type="label">									
+					<width>900</width>
+					<height>50</height>					
+					<textcolor>MainBlue</textcolor>
+					<label>$INFO[MusicPlayer.Offset(0).TrackNumber]: $INFO[MusicPlayer.Offset(0).Artist] - $INFO[MusicPlayer.Offset(0).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(0).Title)</visible>					
+				</control>
+				
+				<control type="label">					
+					<width>900</width>
+					<height>50</height>
+					<aligny>left</aligny>
+					<textcolor>66b8b7b7</textcolor>
+					<label>$INFO[MusicPlayer.Offset(1).TrackNumber]: $INFO[MusicPlayer.Offset(1).Artist] - $INFO[MusicPlayer.Offset(1).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+				</control>
+				
+				<control type="label">					
+					<width>900</width>
+					<height>50</height>
+					<aligny>left</aligny>
+					<textcolor>66b8b7b7</textcolor>
+					<label>$INFO[MusicPlayer.Offset(2).TrackNumber]: $INFO[MusicPlayer.Offset(2).Artist] - $INFO[MusicPlayer.Offset(2).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(2).Title)</visible>
+				</control>
+					
+				<control type="label">					
+					<width>900</width>
+					<height>50</height>
+					<aligny>left</aligny>
+					<textcolor>66b8b7b7</textcolor>
+					<label>$INFO[MusicPlayer.Offset(3).TrackNumber]: $INFO[MusicPlayer.Offset(3).Artist] - $INFO[MusicPlayer.Offset(3).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(3).Title)</visible>
+				</control>	
+
+				<control type="label">					
+					<width>900</width>
+					<height>50</height>
+					<aligny>left</aligny>
+					<textcolor>66b8b7b7</textcolor>
+					<label>$INFO[MusicPlayer.Offset(4).TrackNumber]: $INFO[MusicPlayer.Offset(4).Artist] - $INFO[MusicPlayer.Offset(4).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(4).Title)</visible>
+				</control>	
+
+				<control type="label">					
+					<width>900</width>
+					<height>50</height>
+					<aligny>left</aligny>
+					<textcolor>66b8b7b7</textcolor>
+					<label>$INFO[MusicPlayer.Offset(5).TrackNumber]: $INFO[MusicPlayer.Offset(5).Artist] - $INFO[MusicPlayer.Offset(5).Title]</label>
+					<font>RISELight35</font>
+					<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+				</control>		
+
+			
+			</control>	
+			
+		</control>		
+		
+		
+	<!-------------------------------------------------------------------------------------------->
+	<!--								Pause													-->
+	<!-------------------------------------------------------------------------------------------->	
+				
+			
+			<control type="image">	
+				<visible>player.paused</visible>
+				<posx>760</posx>	<!--Center 960-->
+				<posy>280</posy>	<!--Center 540--> <!--340-->
+				<width>400</width>
+				<height>400</height>
+				<texture>osd_pause.png</texture>			
+			</control>						
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--							FF/RW														-->
+	<!-------------------------------------------------------------------------------------------->
+	
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx2</label>				
+				<visible>player.forwarding2x</visible>
+			</control>	
+			
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx4</label>
+				<visible>player.forwarding4x</visible>
+			</control>
+			
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx8</label>
+				<visible>player.forwarding8x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx16</label>
+				<visible>player.forwarding16x</visible>
+			</control>
+			
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>FFx32</label>
+				<visible>player.forwarding32x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx2</label>
+				<visible>player.rewinding2x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx4</label>
+				<visible>player.rewinding4x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx8</label>
+				<visible>player.rewinding8x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx16</label>
+				<visible>player.rewinding16x</visible>
+			</control>
+
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>1920</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>RISELight270</font>
+				<textcolor>OSDSeekbar</textcolor>
+				<label>RWx32</label>
+				<visible>player.rewinding32x</visible>
+			</control>	
+			
+	<!-------------------------------------------------------------------------------------------->			
+	<!--								End Control Group 										-->
+	<!-------------------------------------------------------------------------------------------->	
+	
+		</control>		
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--									Menu			 									-->
+	<!-------------------------------------------------------------------------------------------->	
+			
+			<control type="group" id="9100">	
+			
+			<visible>Player.HasAudio</visible>
+			
+				<animation type="WindowOpen">
+						<effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+						<effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+						<effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+					</animation>			
+					
+					<animation type="Visible">
+						<effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+					</animation>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+					</animation>
+									
+				<control type="button" id="91">					
+					<posx>1420</posx>
+					<posy>730</posy>
+					<width>400</width>
+					<align>left</align>
+					<textoffsetx>0</textoffsetx>					
+					<textcolor>66b8b7b7</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus></texturefocus>
+					<label>$LOCALIZE[41092]</label>
+					<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(actors) | Container.Content(directors)</visible>
+					
+					<onclick condition="Player.HasAudio">ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[MusicPlayer.Artist],return)</onclick>
+					<onclick condition="Player.HasAudio">Dialog.Close(120)</onclick>
+					<onleft condition="Player.HasAudio"></onleft>		
+					<onright condition="Player.HasAudio"></onright>
+					<onup condition="Player.HasAudio"></onup>
+					<ondown condition="Player.HasAudio">92</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>
+				
+				<control type="button" id="92">				
+					<posx>1420</posx>
+					<posy>780</posy>
+					<width>400</width>
+					<align>left</align>
+					<textoffsetx>0</textoffsetx>					
+					<textcolor>66b8b7b7</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus></texturefocus>
+					<label>$LOCALIZE[563] +</label>	
+					
+					<onclick condition="Player.HasAudio">IncreaseRating</onclick>
+					<onleft condition="Player.HasAudio"></onleft>
+					<onright condition="Player.HasAudio"></onright>
+					<onup condition="Player.HasAudio">91</onup>
+					<ondown condition="Player.HasAudio">93</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>					
+				</control>
+				
+				<control type="button" id="93">					
+					<posx>1420</posx>
+					<posy>830</posy>
+					<width>400</width>
+					<align>left</align>
+					<textoffsetx>0</textoffsetx>					
+					<textcolor>66b8b7b7</textcolor>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus></texturefocus>
+					<label>$LOCALIZE[563] -</label>	
+					
+					<onclick condition="Player.HasAudio">DecreaseRating</onclick>
+					<onleft condition="Player.HasAudio"></onleft>
+					<onright condition="Player.HasAudio"></onright>
+					<onup condition="Player.HasAudio">92</onup>
+					<ondown condition="Player.HasAudio">9101</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>
+				
+			</control>
+	
+	<!-------------------------------------------------------------------------------------------->
+	<!--								OSD	Buttons 											-->
+	<!-------------------------------------------------------------------------------------------->			
+				
+			<control type="group" id="9101">			
+			
+				<visible>Player.HasAudio</visible>	
+				
+				
+					<animation type="WindowOpen">
+						<effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+						<effect type="zoom" start="200" end="100" time="300" center="960,540" tween="sine" easing="inout" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+						<effect type="zoom" start="100" end="50" time="300" center="960,540" tween="sine" easing="inout" />
+					</animation>			
+					
+					<animation type="Visible">
+						<effect delay="500" type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />              
+					</animation>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />               
+					</animation>
+		
+			
+				<!--Play, Pause-->
+				<control type="togglebutton" id="1">					
+					<description>Play/Pause</description>
+					<posx>1540</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label></label>
+					<altlabel></altlabel>
+					<font>-</font>
+					<texturefocus>osd/PauseFO.png</texturefocus>
+					<texturenofocus>osd/PauseNF.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<alttexturefocus>osd/PlayFO.png</alttexturefocus>
+					<alttexturenofocus>osd/PlayNF.png</alttexturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Play)</onclick>					
+					<onleft condition="Player.HasAudio">9</onleft>
+                    <onright condition="Player.HasAudio">2</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>					
+				
+				<!--Stop-->
+				<control type="button" id="2">
+					<description>Stop</description>
+					<posx>1600</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label></label>
+					<font>-</font>
+					<texturefocus>osd/StopFO.png</texturefocus>
+					<texturenofocus>osd/StopNF.png</texturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Stop)</onclick>
+					<onclick condition="Player.HasAudio">Dialog.Close(120)</onclick>					
+					<onleft condition="Player.HasAudio">1</onleft>
+                    <onright condition="Player.HasAudio">3</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>
+				
+				<!--FF-->
+				<control type="button" id="3">
+					<description>Fast Forward</description>
+					<posx>1660</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label></label>
+					<font>-</font>
+					<texturefocus>osd/ForwardFO.png</texturefocus>
+					<texturenofocus>osd/ForwardNF.png</texturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Forward)</onclick>
+					<onleft condition="Player.HasAudio">2</onleft>
+                    <onright condition="Player.HasAudio">4</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>
+				
+				<!--Next-->
+				<control type="button" id="4">
+					<description>Next</description>
+					<posx>1720</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label>209</label>
+					<font>-</font>
+					<texturefocus>osd/NextTrackFO.png</texturefocus>
+					<texturenofocus>osd/NextTrackNF.png</texturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Next)</onclick>
+					<onleft condition="Player.HasAudio">3</onleft>
+                    <onright condition="Player.HasAudio">5</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>			
+				
+				
+				<!--Skip Back-->
+				<control type="button" id="8">
+					<description>Skip Back</description>
+					<posx>1420</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label>210</label>
+					<font>-</font>
+					<texturefocus>osd/PrevTrackFO.png</texturefocus>
+					<texturenofocus>osd/PrevTrackNF.png</texturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Previous)</onclick>
+					<onleft condition="Player.HasAudio"></onleft>
+					<onright condition="Player.HasAudio">9</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>
+				
+				<!--RR-->
+				<control type="button" id="9">
+					<description>Rewind</description>
+					<posx>1480</posx>
+					<posy>945</posy>
+					<width>50</width>
+					<height>50</height>
+					<label>31036</label>
+					<font>-</font>
+					<texturefocus>osd/RewindFO.png</texturefocus>
+					<texturenofocus>osd/RewindNF.png</texturenofocus>
+					
+					<onclick condition="Player.HasAudio">PlayerControl(Rewind)</onclick>
+					<onleft condition="Player.HasAudio">8</onleft>
+					<onright condition="Player.HasAudio">1</onright>
+					<onup condition="Player.HasAudio">9100</onup>
+					<ondown condition="Player.HasAudio">9100</ondown>
+					
+					<onleft condition="!Player.HasAudio">Dialog.Close(120)</onleft>
+					<onright condition="!Player.HasAudio">Dialog.Close(120)</onright>
+					<onup condition="!Player.HasAudio">Dialog.Close(120)</onup>
+					<ondown condition="!Player.HasAudio">Dialog.Close(120)</ondown>
+					<onfocus condition="!Player.HasAudio">Dialog.Close(120)</onfocus>
+					<onclick condition="!Player.HasAudio">Dialog.Close(120)</onclick>
+				</control>		
+				
+			</control>	
+			
+			
+	</controls>
+
+</window>

@@ -1,0 +1,363 @@
+<window>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+	
+		<control type="group" id="250">				
+		
+			<animation time="600" effect="fade">WindowOpen</animation> 
+			<animation time="600" effect="fade">WindowClose</animation>	
+			
+			<control type="button" id="8999">	<!--Fake Button Mouse-->				
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>20</width>
+				<height>720</height>
+				<label>-</label>
+				<font>-</font>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus>-</texturefocus>
+				<visible>true</visible>
+			</control>
+			<control type="image">				<!--Panel-->			
+				<posx>210</posx>
+				<posy>97</posy>
+				<width>1550</width>
+				<height>684</height>			
+				<texture>osd/osd_top_panel.png</texture>
+			</control>
+			<control type="button"> 			<!--Close Button-->				
+				<posx>20</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<onleft>101</onleft>
+				<onright>101</onright>
+				<onup>101</onup>
+				<ondown>101</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			
+			<!--Top Label-->
+			<control type="group">			
+				<control type="label">			<!--Header-->					
+					<posx>350</posx>
+					<posy>170</posy>
+					<width>550</width>
+					<height>50</height>
+					<font>RISE40</font>
+					<label>[B]XBMC SUBTITLES[/B]</label>
+					<align>Left</align>					
+					<textcolor>White</textcolor>					
+				</control>
+				<control type="label" id="100">	<!--textarea-->					
+					<posx>350</posx>
+					<posy>220</posy>
+					<width>780</width>
+					<height>50</height>
+					<font>RISELight32</font>
+					<textcolor>White</textcolor>
+					<align>Left</align>					
+					<wrapmultiline>false</wrapmultiline>
+				</control>						
+				<control type="image" id="110">	<!--Logo-->					
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>250</width>
+					<height>40</height>
+					<colordiffuse>00ffffff</colordiffuse>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+
+			<!--Left Menu-->
+			<control type="group">
+				<control type="list" id="120">			<!--List 120-->
+					<posx>300</posx>
+					<posy>300</posy>
+					<width>1300</width>
+					<height>350</height>
+					<onleft>121</onleft>
+					<onright>150</onright>
+					<onup>120</onup>
+					<ondown>120</ondown>
+					<viewtype label="535">list</viewtype>
+					<pagecontrol>121</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="1300" height="50">						
+						<control type="label"><!--Language-->
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+						</control>
+						<control type="image"><!--Icon-->
+							<posx>135</posx>
+							<posy>13</posy>
+							<width>20</width>
+							<height>12</height>
+							<texture>icon_close_caption.png</texture>
+							<visible>ListItem.property(hearing_imp)</visible>
+						</control>
+						<control type="image"><!--Icon-->
+							<posx>160</posx>
+							<posy>13</posy>
+							<width>40</width>
+							<height>12</height>
+							<texture>icon_sync.png</texture>
+							<visible>ListItem.property(sync)</visible>
+						</control>
+						<control type="label"><!--Label 2-->
+							<posx>350</posx>
+							<posy>0</posy>
+							<width>600</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label2</info>
+						</control>
+						<control type="image"><!--Star Rating-->
+							<posx>200</posx>
+							<posy>0</posy>
+							<width>100</width>
+							<height>50</height>
+							<texture>rating\widget_stars\$INFO[ListItem.ActualIcon].png</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1300" height="50">						
+						<control type="image"><!--Slider-->
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>950</width>
+							<height>50</height>
+							<texture>listcontrol_item_selected_wide.png</texture>
+							<visible>Control.HasFocus(120)</visible>
+						</control>						
+						<control type="label"><!--Language-->
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>150</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+						</control>
+						<control type="image"><!--Icon-->
+							<posx>135</posx>
+							<posy>13</posy>
+							<width>20</width>
+							<height>12</height>
+							<texture>icon_close_caption.png</texture>
+							<visible>ListItem.property(hearing_imp)</visible>
+						</control>
+						<control type="image"><!--Icon-->
+							<posx>160</posx>
+							<posy>13</posy>
+							<width>40</width>
+							<height>12</height>
+							<texture>icon_sync.png</texture>
+							<visible>ListItem.property(sync)</visible>
+						</control>
+						<control type="label"><!--Label 2-->
+							<posx>350</posx>
+							<posy>0</posy>
+							<width>600</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label2</info>
+						</control>
+						<control type="image"><!--Star Rating-->
+							<posx>200</posx>
+							<posy>0</posy>
+							<width>100</width>
+							<height>50</height>
+							<texture>rating\widget_stars\$INFO[ListItem.ActualIcon].png</texture>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="spincontrol" id="121"> 	<!--Next Page Button-->					
+					<posx>1250</posx>
+					<posy>680</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>RISELight28</font>
+					<align>right</align>					
+					<subtype>page</subtype>
+					<textcolor>White</textcolor>
+					<onleft>120</onleft>
+					<onright>120</onright>
+					<ondown>120</ondown>
+					<onup>120</onup>
+					<textoffsetx>10</textoffsetx>
+					<textureup>default-scroll-up.png</textureup>
+					<texturedown>default-scroll-down.png</texturedown>
+					<textureupfocus>default-scroll-up-focus.png</textureupfocus>
+					<texturedownfocus>default-scroll-down-focus.png</texturedownfocus>
+					<showonepage>false</showonepage>
+					<visible>Control.IsVisible(120)</visible>
+				</control>
+				<control type="group" id="111">			<!--Local Subtitle-->
+					<control type="grouplist">
+						<posx>350</posx>
+						<posy>680</posy>
+						<width>400</width>
+						<height>50</height>
+						<align>Left</align>
+						<orientation>horizontal</orientation>
+						<itemgap>5</itemgap>						
+						<control type="label">	<!--label-->						
+							<width min="10" max="260">auto</width>
+							<height>50</height>
+							<font>RISELight28</font>
+							<textcolor>White</textcolor>
+							<label>$LOCALIZE[SCRIPT655]</label>							
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+					</control>
+				</control>
+				<control type="image">
+					<posx>866</posx>
+					<posy>348</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>nav-right.png</texture>
+				</control>
+			</control>
+			
+			<!--Sub Menu-->	
+			<control type="group">	
+				<control type="image"><!--Button 1 nofocus-->
+					<posx>1400</posx>
+					<posy>300</posy>
+					<width>290</width>
+					<height>50</height>
+					<texture>button-nofocus.png</texture>				
+				</control>
+				<control type="image"><!--Button 2 nofocus-->
+					<posx>1400</posx>
+					<posy>350</posy>
+					<width>290</width>
+					<height>50</height>
+					<texture>button-nofocus.png</texture>						
+				</control>
+				<control type="image"><!--Button 3 nofocus-->
+					<posx>1400</posx>
+					<posy>400</posy>
+					<width>290</width>
+					<height>50</height>
+					<texture>button-nofocus.png</texture>					
+				</control>
+				
+				<control type="label">
+					<description>XBMC Subtitles label</description>
+					<posx>1400</posx>
+					<posy>220</posy>
+					<width>240</width>
+					<height>26</height>
+					<label>$LOCALIZE[SCRIPT760]</label>
+					<font>RISELight32</font>
+					<align>center</align>					
+					<textcolor>White</textcolor>					
+					<wrapmultiline>true</wrapmultiline>
+				</control>	
+				
+				<control type="list" id="150"><!--List 150-->
+					<posx>1400</posx>
+					<posy>300</posy>
+					<width>300</width>
+					<height>434</height>
+					<onleft>120</onleft>
+					<onright>120</onright>
+					<onup>150</onup>
+					<ondown>150</ondown>
+					<viewtype label="535">list</viewtype>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="400" height="50">							
+						<control type="label">
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>230</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<visible>!ListItem.property(man)</visible>
+						</control>
+						<control type="label">
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>230</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<visible>ListItem.property(man)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout width="400" height="50">						
+						<control type="image"><!--Button-->
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>50</height>
+							<texture>button-focus.png</texture>
+							<visible>Control.HasFocus(150)</visible>
+						</control>
+						<control type="label">
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>230</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<visible>!ListItem.property(man)</visible>
+						</control>
+						<control type="label">
+							<posx>50</posx>
+							<posy>0</posy>
+							<width>230</width>
+							<height>50</height>
+							<font>RISE32</font>
+							<aligny>center</aligny>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<visible>ListItem.property(man)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

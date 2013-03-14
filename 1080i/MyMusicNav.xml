@@ -1,0 +1,209 @@
+<!--RISE-->
+<window id="502">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50</views>
+
+	<controls>	
+	
+		<!--Hidden Search Button-->
+		<control type="radiobutton" id="19">
+			<description>Filter (hidden)</description>
+			<include>HiddenButton</include>
+		</control>
+		
+		<!--Global Background-->
+		<include>GlobalBackground</include>		
+		<!-- Header Music-->
+		<include>Header_Music</include>				
+		<!--Common Clock-->	
+		<include>Common_Clock</include>			
+		<!--Music_NowPlaying-->			
+		<include>NowPlayingMusic</include>		
+		<!--Video_NowPlaying-->			
+		<include>NowPlayingVideo</include>	
+		
+		<!--Fanart Control.IsVisible(50)-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>					
+			<include>animation_hover_slide</include>
+			<include>animation_fade</include>		
+			<control type="image">	<!--Albums, Songs, Artist-->
+				<visible>Container.Content(albums) | Container.Content(songs) | Container.Content(artists)</visible>
+				<posx>0</posx>
+				<posy>128</posy>
+				<width>1197</width> 
+				<height>588</height>					
+				<texture background="true" fallback="hover_music.png" diffuse="hover_matte.png">$INFO[Listitem.Property(Fanart_Image)]</texture>		
+				<colordiffuse>HoverDiffuse</colordiffuse>
+				<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+				<fadetime>400</fadetime>							
+			</control>		
+			<control type="image">	<!--Other-->
+				<visible>[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(musicplaylisteditor)] + [!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+				<posx>0</posx>
+				<posy>128</posy>
+				<width>1197</width> 
+				<height>588</height>					
+				<texture background="true" diffuse="hover_matte.png">hover_music.png</texture>		
+				<colordiffuse>HoverDiffuse</colordiffuse>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<fadetime>400</fadetime>						
+			</control>	
+		</control>
+		
+		<!--View-->
+		<include>View_50_List</include>
+		
+		<!--Dim Sub Menu-->		
+		<control type="image">				
+			<animation time="600" effect="fade" start="100" end="0" condition="!ControlGroup(9000).HasFocus()">Conditional</animation>					
+			<animation time="600" effect="fade" tween="cubic" easing="out" start="100" end="0">WindowClose</animation>				
+			<include>Dimensions_Fullscreen</include>				
+			<colordiffuse>22FFFFFF</colordiffuse>
+			<texture background="true">white_back.png</texture>			
+		</control>		
+		
+		<!--Start Sub Menu-->	
+		<control type="group">	
+			<visible>Control.IsVisible(50)</visible>
+			<include>animation_hover_slide</include>
+			<control type="image">				<!--Sub Menu Panel-->
+				<posx>-20</posx>
+				<posy>60</posy><!--96-->
+				<width>600</width>
+				<height>790</height><!--651-->
+				<texture>homemenu.png</texture>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />				
+				</animation>
+			</control>		
+			<control type="image">				<!--Sub Menu Tab-->				
+				<posx>600</posx>
+				<posy>330</posy>
+				<width>64</width>
+				<height>199</height>
+				<texture>menu_tab.png</texture>
+				<include>animation_fade</include>
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-92" end="-600" time="200" />
+				</animation>				
+			</control>
+			<control type="grouplist" id="9000"><!--Grouplist Button-->	
+				<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">				
+					<effect type="slide" start="-10" end="-600" time="200" />					
+				</animation>	
+				<posx>48</posx>
+				<posy>140</posy>
+				<width>469</width>
+				<height>620</height>
+				<itemgap>-</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>					
+				<orientation>vertical</orientation>	
+				
+				<!--Buttons-->
+				<control type="label" id="200">			<!--Label Menu-->					
+					<width>470</width>
+					<align>left</align>
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[41090]:[/B]</label>	
+					<textcolor>White</textcolor>									
+				</control>
+				<control type="image" id="201">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>	
+				<control type="button" id="3">			<!--Button Sort-->	
+					<description>Sort</description>
+					<width>469</width>
+					<align>left</align>					
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>					
+				</control>
+				<control type="togglebutton" id="4">	<!--Button Ascending-->	
+					<description>Ascending</description>
+					<width>469</width>
+					<align>left</align>
+					<label>584</label>
+					<altlabel>585</altlabel>					
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>						
+				</control>
+				<control type="button" id="21">			<!--Button Search-->	
+					<description>Activate Filter</description>
+					<visible>IsEmpty(Window.Property(filter))</visible>
+					<width>469</width>
+					<align>left</align>
+					<label>137</label>
+					<onclick>SendClick(musiclibrary,19)</onclick>
+					<onclick>SetFocus(22)</onclick>
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>					
+				</control>
+				<control type="button" id="22">			<!--Button Show Filter Label-->	
+					<description>Show Filter Label</description>
+					<visible>!IsEmpty(Window.Property(filter))</visible>
+					<width>469</width>
+					<align>left</align>
+					<label>$LOCALIZE[587] - $INFO[Window.Property(filter)]</label>
+					<onclick>SendClick(musiclibrary,19)</onclick>
+					<onclick>SetFocus(21)</onclick>
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>					
+				</control>
+				<control type="radiobutton" id="16">	<!--Button Party Mode-->	
+					<description>PartyMode</description>
+					<width>469</width>
+					<align>left</align>
+					<label>589</label>
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>					
+				</control>
+				<control type="button" id="5">			<!--Button Files-->	
+					<description>Files</description>
+					<width>469</width>
+					<align>left</align>
+					<label>31001</label>
+					<onclick>SetFocus(50)</onclick>					
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>					
+				</control>
+				<control type="radiobutton" id="202">	<!--Button Music OSD-->									
+					<width>469</width>
+					<align>left</align>				
+					<label>$LOCALIZE[249] $LOCALIZE[478]</label>					
+					<onclick>Skin.ToggleSetting(MusicOSD)</onclick>
+					<selected>Skin.HasSetting(MusicOSD)</selected>	
+					<onfocus>Dialog.Close(musicoverlay)</onfocus>		
+				</control>	
+				<control type="image" id="203">			<!--Space-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_space.png</texture>				
+				</control>		
+				<control type="label" id="300">			<!--View:-->						
+					<width>469</width>
+					<align>left</align>	
+					<textoffsetx>50</textoffsetx>
+					<font>RISELight35</font>
+					<label>[B]$LOCALIZE[457][/B]</label>
+					<textcolor>White</textcolor>						
+				</control>	
+				<control type="image" id="301">			<!--Seperator-->						
+					<width>469</width>					
+					<height>20</height>	
+					<align>left</align>	
+					<texture>menu_separator.png</texture>				
+				</control>		
+				<control type="button" id="302">		<!--View List-->					
+					<align>left</align>		
+					<label>List</label>					
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onfocus>Skin.Reset(OtherView)</onfocus>					
+				</control>	
+			</control>	
+		</control>
+		
+	</controls>
+</window>

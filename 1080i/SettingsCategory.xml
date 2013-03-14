@@ -1,0 +1,103 @@
+<!--RISE-->
+<window id="12">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>		
+		
+		<!--Globalbackground-->
+		<include>GlobalBackground</include>
+		<!--Header Settings-->
+		<include>Header_Settings</include>
+		<!--Common Clock-->	
+		<include>Common_Clock</include>
+		<!--RISE Versiom-->	
+		<include>RISE_Version</include>			
+		
+	
+		<!--Viewport Info-->
+		<control type="image">				
+			<posx>0</posx>
+			<posy>100</posy>
+			<width>1893</width>
+			<height>900</height>
+			<texture>viewport_settings.png</texture>
+			<include>animation_fade</include>
+			<include>animation_hover_slide</include>
+		</control>	
+
+		
+		<control type="grouplist" id="3">			
+			<description>Button Area</description>
+			<posx>60</posx>
+			<posy>200</posy>
+			<width>450</width>
+			<height>750</height>
+			<itemgap>3</itemgap>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<orientation>vertical</orientation>
+			<include>animation_fade</include>
+			<include>animation_hover_slide</include>	
+		</control>
+		<control type="grouplist" id="5">			
+			<description>Control Area</description>
+			<posx>600</posx>
+			<posy>200</posy>
+			<width>1230</width>
+			<height>750</height>
+			<itemgap>3</itemgap>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<orientation>vertical</orientation>
+			<include>animation_fade</include>
+			<include>animation_hover_slide</include>	
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<align>left</align>
+			<height>50</height>
+			<font>RISE32</font>
+			<textcolor>White</textcolor>
+			<focusedcolor>Black</focusedcolor>					
+			<texturefocus>button-focus.png</texturefocus>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default Radio Button</description>			
+			<align>left</align>
+			<height>50</height>
+			<font>RISE32</font>
+			<textcolor>White</textcolor>
+			<focusedcolor>Black</focusedcolor>					
+			<texturefocus>button-focus.png</texturefocus>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default Spin Control</description>
+			<align>left</align>
+			<height>50</height>
+			<font>RISE32</font>
+			<textcolor>White</textcolor>
+			<focusedcolor>Black</focusedcolor>					
+			<texturefocus>button-focus.png</texturefocus>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+		</control>
+		<control type="button" id="10">
+				<description>Default Category Button</description>
+				<align>left</align>
+				<height>50</height>
+				<font>RISE32</font>
+				<textcolor>White</textcolor>
+				<focusedcolor>Black</focusedcolor>					
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+			</control>		
+		
+	</controls>
+
+</window>
